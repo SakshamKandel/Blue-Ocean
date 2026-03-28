@@ -413,17 +413,17 @@ export default function Strategy() {
                 )}
 
                 {auditState === 'processing' && (
-                  <div className="relative z-10 space-y-8">
+                  <div className="relative z-10 flex flex-col items-center justify-center text-center h-full py-12 space-y-8">
                     {/* Radar Scan Effect */}
-                    <div className="absolute inset-0 pointer-events-none -translate-y-20">
+                    <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
                       <motion.div 
                         animate={{ rotate: 360 }}
                         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[conic-gradient(from_0deg,transparent_0deg,rgba(0,18,63,0.03)_360deg)]"
+                        className="w-[200%] h-[200%] bg-[conic-gradient(from_0deg,transparent_0deg,rgba(0,18,63,0.03)_360deg)]"
                       />
                     </div>
                     
-                    <div className="relative w-32 h-32 mx-auto">
+                    <div className="relative w-32 h-32">
                       <motion.div 
                         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -434,57 +434,65 @@ export default function Strategy() {
                       </div>
                     </div>
                     
-                    <div>
+                    <div className="relative z-10">
                       <p className="font-display text-2xl font-bold text-primary mb-2">Analyzing Horizons...</p>
-                      <p className="text-on-surface-variant text-sm max-w-xs mx-auto">Running live portfolio math and generating advisor-style commentary from the computed analytics.</p>
+                      <p className="text-on-surface-variant text-sm max-w-xs mx-auto leading-relaxed">Running live portfolio math and generating advisor-style commentary from the computed analytics.</p>
                     </div>
                   </div>
                 )}
 
                 {auditState === 'result' && (
                   <motion.div 
-                    initial={{ opacity: 0, scale: 0.9 }} 
+                    initial={{ opacity: 0, scale: 0.95 }} 
                     animate={{ opacity: 1, scale: 1 }}
-                    className="relative z-10 text-left space-y-6 w-full"
+                    className="relative z-10 flex flex-col h-full space-y-6 w-full"
                   >
-                    <div className="p-6 bg-secondary/5 rounded-3xl border border-secondary/10">
-                      <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-4">Audit Result</p>
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm font-medium">Efficiency Score</span>
-                          <span className="font-display font-bold text-primary">{auditScore || '...'}/100</span>
+                    <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+                      <div className="p-6 bg-secondary/5 rounded-3xl border border-secondary/10 space-y-6">
+                        <div className="flex justify-between items-center bg-white/50 p-4 rounded-2xl border border-secondary/5">
+                          <div className="space-y-1">
+                            <p className="text-secondary text-[10px] font-bold uppercase tracking-widest">Efficiency Score</p>
+                            <p className="font-display text-2xl font-bold text-primary">{auditScore || '...'}/100</p>
+                          </div>
+                          <div className="w-12 h-12 rounded-full border-4 border-secondary/10 flex items-center justify-center relative">
+                            <motion.div 
+                              initial={{ rotate: -90, pathLength: 0 }}
+                              animate={{ pathLength: (auditScore || 0) / 100 }}
+                              className="absolute inset-0"
+                            />
+                            <Activity className="w-5 h-5 text-secondary" />
+                          </div>
                         </div>
-                        <div className="h-1.5 w-full bg-secondary/10 rounded-full overflow-hidden">
-                          <motion.div initial={{ width: 0 }} animate={{ width: `${auditScore || 0}%` }} className="h-full bg-secondary" transition={{ duration: 1 }} />
-                        </div>
+
                         {computedMetrics && (
                           <div className="grid grid-cols-2 gap-3 text-sm">
-                            <div className="rounded-2xl bg-white/50 p-3">
-                              <p className="text-on-surface-variant">Expected Return</p>
+                            <div className="rounded-2xl bg-white/50 p-3 border border-outline-variant/10">
+                              <p className="text-[10px] uppercase font-bold text-on-surface-variant/70 mb-1">Expected Return</p>
                               <p className="font-display font-bold text-primary">{(computedMetrics.expectedAnnualReturn * 100).toFixed(1)}%</p>
                             </div>
-                            <div className="rounded-2xl bg-white/50 p-3">
-                              <p className="text-on-surface-variant">Volatility</p>
+                            <div className="rounded-2xl bg-white/50 p-3 border border-outline-variant/10">
+                              <p className="text-[10px] uppercase font-bold text-on-surface-variant/70 mb-1">Volatility</p>
                               <p className="font-display font-bold text-primary">{(computedMetrics.expectedAnnualVolatility * 100).toFixed(1)}%</p>
                             </div>
-                            <div className="rounded-2xl bg-white/50 p-3">
-                              <p className="text-on-surface-variant">Resilience</p>
+                            <div className="rounded-2xl bg-white/50 p-3 border border-outline-variant/10">
+                              <p className="text-[10px] uppercase font-bold text-on-surface-variant/70 mb-1">Resilience</p>
                               <p className="font-display font-bold text-primary">{computedMetrics.resilienceScore}/100</p>
                             </div>
-                            <div className="rounded-2xl bg-white/50 p-3">
-                              <p className="text-on-surface-variant">Projected Value</p>
+                            <div className="rounded-2xl bg-white/50 p-3 border border-outline-variant/10">
+                              <p className="text-[10px] uppercase font-bold text-on-surface-variant/70 mb-1">Portfolio Value</p>
                               <p className="font-display font-bold text-primary">{formatNprCompact(computedMetrics.projectedValue)}</p>
                             </div>
                           </div>
                         )}
-                        <div className="text-sm text-on-surface-variant leading-relaxed whitespace-pre-line min-h-[100px]">
+
+                        <div className="text-sm text-on-surface-variant leading-relaxed whitespace-pre-line bg-white/30 p-4 rounded-2xl border border-white/50">
                           {auditResult || 'Synthesizing portfolio guidance...'}
                         </div>
                       </div>
                     </div>
                     <button 
                       onClick={() => setAuditState('idle')}
-                      className="w-full border border-secondary text-secondary p-4 rounded-2xl font-bold hover:bg-secondary hover:text-white transition-all text-sm"
+                      className="w-full bg-primary text-white p-5 rounded-2xl font-bold hover:bg-secondary transition-all text-sm shadow-xl shadow-primary/10"
                     >
                       Run New Audit
                     </button>
