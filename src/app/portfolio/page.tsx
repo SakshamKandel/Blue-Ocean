@@ -22,18 +22,18 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-surface selection:bg-secondary/20 font-sans relative">
-      <nav className="fixed w-full z-50 top-0 px-4 py-1.5 sm:px-6 sm:py-2 mix-blend-difference text-white pointer-events-none">
-        <div className="max-w-7xl mx-auto flex flex-col gap-1 md:flex-row md:justify-between md:items-center pointer-events-auto">
+      <nav className="fixed w-full z-50 top-0 px-4 py-2 sm:px-6 sm:py-3 mix-blend-difference text-white pointer-events-none">
+        <div className="max-w-7xl mx-auto flex flex-col gap-2 md:flex-row md:justify-between md:items-center pointer-events-auto">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="flex items-center">
             <Link href="/">
-              <img src="/Logo.png" alt="Logo" className="h-8 sm:h-10 w-auto object-contain" />
+              <img src="/Logo.png" alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
             </Link>
           </motion.div>
-          <div className="flex gap-4 sm:gap-6 md:gap-10 font-medium text-[10px] sm:text-xs tracking-wide overflow-x-auto whitespace-nowrap pb-1 md:pb-0 max-w-full">
+          <div className="flex gap-5 sm:gap-8 md:gap-12 font-medium text-xs sm:text-sm tracking-wide overflow-x-auto whitespace-nowrap pb-1 md:pb-0 max-w-full">
              <Link href="/" className="opacity-60 hover:opacity-100 transition-opacity">Home</Link>
              <Link href="/about" className="opacity-60 hover:opacity-100 transition-opacity">About</Link>
              <Link href="/strategy" className="opacity-60 hover:opacity-100 transition-opacity">Strategy</Link>
-             <Link href="/portfolio" className="opacity-100 border-b border-white pb-0.5">Portfolio</Link>
+             <Link href="/portfolio" className="opacity-100 border-b border-white pb-1">Portfolio</Link>
              <Link href="/contact" className="opacity-60 hover:opacity-100 transition-opacity">Contact</Link>
           </div>
           <motion.a 
@@ -43,7 +43,7 @@ export default function Portfolio() {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             transition={{ delay: 0.7 }} 
-            className="hidden md:inline-flex px-5 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black text-xs transition-all pointer-events-auto"
+            className="hidden md:inline-flex px-6 py-2.5 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all pointer-events-auto"
           >
             NEPAL STOCK
           </motion.a>
