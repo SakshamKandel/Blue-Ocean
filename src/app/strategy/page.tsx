@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 import { Shield, Activity, FileCheck, Gauge, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import { computePortfolioAnalytics, formatNprCompact } from '@/lib/portfolioAnalytics';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -16,76 +17,82 @@ const staggerContainer: Variants = {
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 };
 
+const allocationFields: Array<{
+  key: 'equities' | 'fixedIncome' | 'realAssets' | 'cash';
+  label: string;
+}> = [
+  { key: 'equities', label: 'Equities %' },
+  { key: 'fixedIncome', label: 'Fixed Income %' },
+  { key: 'realAssets', label: 'Real Assets %' },
+  { key: 'cash', label: 'Cash %' },
+];
+
 export default function Strategy() {
   const [auditState, setAuditState] = React.useState<'idle' | 'processing' | 'result'>('idle');
-  const [formData, setFormData] = React.useState({ aum: '', risk: 'moderate', assets: 'equities' });
+  const [formData, setFormData] = React.useState({
+    aum: '',
+    risk: 'moderate' as 'low' | 'moderate' | 'high',
+    equities: 40,
+    fixedIncome: 30,
+    realAssets: 20,
+    cash: 10,
+    monthlyContribution: 250000,
+    horizonYears: 5,
+  });
+
+  const normalizeWeights = () => {
+    const total = formData.equities + formData.fixedIncome + formData.realAssets + formData.cash;
+    if (total === 0) return;
+    const factor = 100 / total;
+    setFormData({
+      ...formData,
+      equities: Math.round(formData.equities * factor),
+      fixedIncome: Math.round(formData.fixedIncome * factor),
+      realAssets: Math.round(formData.realAssets * factor),
+      cash: Math.round(formData.cash * factor),
+    });
+  };
   const [auditResult, setAuditResult] = React.useState('');
   const [auditScore, setAuditScore] = React.useState(0);
   const [validationError, setValidationError] = React.useState('');
+  const [computedMetrics, setComputedMetrics] = React.useState<null | ReturnType<typeof computePortfolioAnalytics>>(null);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const liveAnalytics = computePortfolioAnalytics(formData);
 
   const handleAudit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate AUM
-    const aumClean = formData.aum.replace(/[^0-9]/g, '');
     if (!formData.aum.trim() || !/[0-9]/.test(formData.aum)) {
       setValidationError('Please enter a real financial value (e.g. 50M or 1Cr)');
       return;
     }
     
+    if (liveAnalytics.allocationTotal <= 0) {
+      setValidationError('Enter an allocation mix greater than zero');
+      return;
+    }
+
     setValidationError('');
     setAuditState('processing');
     setAuditResult('');
     setAuditScore(0);
+    setComputedMetrics(null);
     
     try {
-      const prompt = `As the Blue Ocean Inco AI concierge, provide a professional 'Quantamental Audit' on this specific portfolio:
-Scale: NPR ${formData.aum} 
-Strategy: ${formData.risk === 'high' ? 'High Alpha Pursuit' : formData.risk === 'moderate' ? 'Moderate Growth' : 'Low Risk Preservation'}
-Asset Focus: ${formData.assets}
-
-Your analysis must be tailored specifically to the NEPSE (Nepal Stock Exchange) landscape for an account of this size. 
-Format: Exactly 2 natural paragraphs. No markdown.
-Important: You MUST provide a numeric efficiency score (1-100) based on your analysis at the very end using this token: [[SCORE:XX]]`;
-
-      const res = await fetch('/api/chat', {
+      const res = await fetch('/api/portfolio-analytics', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: [{ role: 'user', content: prompt }],
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (!res.ok) throw new Error('Audit failed');
-
-      const reader = res.body?.getReader();
-      const decoder = new TextDecoder();
-      let accumulated = '';
-      
-      if (reader) {
-        setAuditState('result');
-        let done = false;
-        while (!done) {
-          const { value, done: readerDone } = await reader.read();
-          done = readerDone;
-          if (value) {
-            const chunk = decoder.decode(value, { stream: true });
-            accumulated += chunk;
-            
-            // Extraction & Cleanup
-            const scoreMatch = accumulated.match(/\[\[SCORE:(\d+)\]\]/);
-            if (scoreMatch) {
-              setAuditScore(parseInt(scoreMatch[1]));
-              // Clean the display text of ALL score tokens globally
-              setAuditResult(accumulated.replace(/\[\[SCORE:\d+\]\]/g, '').trim());
-            } else {
-              setAuditResult(accumulated.trim());
-            }
-          }
-        }
-      }
+      const data = await res.json();
+      setComputedMetrics(data.analytics);
+      setAuditScore(data.analytics?.efficiencyScore ?? 0);
+      setAuditResult(data.commentary ?? '');
+      setAuditState('result');
     } catch (err) {
       console.error(err);
       setAuditState('idle');
@@ -260,8 +267,8 @@ Important: You MUST provide a numeric efficiency score (1-100) based on your ana
                 </div>
               </div>
             </motion.div>
-            <motion.div variants={fadeInUp} className="relative group">
-              <div className="aspect-square bg-surface-lowest rounded-[48px] overflow-hidden flex flex-col items-center justify-center p-8 md:p-12 text-center border border-outline-variant/10 relative">
+            <motion.div variants={fadeInUp} className="relative group h-full">
+              <div className="h-full bg-surface-lowest rounded-[32px] md:rounded-[48px] overflow-hidden flex flex-col justify-start p-6 md:p-10 text-left border border-outline-variant/10 relative shadow-2xl shadow-primary/5">
                 
                 {auditState === 'idle' && (
                   <motion.form 
@@ -274,7 +281,7 @@ Important: You MUST provide a numeric efficiency score (1-100) based on your ana
                       <label className="text-xs font-bold uppercase tracking-widest text-secondary">Asset Portfolio Data</label>
                       <input 
                         type="text" 
-                        placeholder="Hypothetical AUM (e.g. 50M NPR)" 
+                        placeholder="AUM (e.g. 50M, 1Cr, 7500000)" 
                         className={`w-full bg-surface p-4 rounded-2xl border ${validationError ? 'border-red-500/50' : 'border-outline-variant/20'} focus:border-secondary outline-none transition-all text-primary shadow-sm`}
                         value={formData.aum}
                         onChange={(e) => {
@@ -289,25 +296,118 @@ Important: You MUST provide a numeric efficiency score (1-100) based on your ana
                         required
                       />
                       {validationError && (
-                        <motion.p initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-[11px] text-red-500 font-bold ml-2">
+                        <motion.p initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="text-[11px] text-red-500 font-bold ml-2 -mt-2">
                           ! {validationError}
                         </motion.p>
                       )}
-                      <select 
-                        className="w-full bg-surface p-4 rounded-2xl border border-outline-variant/20 focus:border-secondary outline-none transition-colors text-primary appearance-none"
-                        value={formData.risk}
-                        onChange={(e) => setFormData({...formData, risk: e.target.value})}
-                      >
-                        <option value="low">Low Risk Tolerance</option>
-                        <option value="moderate">Moderate Growth</option>
-                        <option value="high">High Alpha Pursuit</option>
-                      </select>
+                      
+                      <div className="relative group">
+                        <select 
+                          className="w-full bg-surface p-4 rounded-2xl border border-outline-variant/20 focus:border-secondary outline-none transition-colors text-primary appearance-none cursor-pointer font-medium"
+                          value={formData.risk}
+                          onChange={(e) => setFormData({...formData, risk: e.target.value as 'low' | 'moderate' | 'high'})}
+                        >
+                          <option value="low">Low Risk Tolerance</option>
+                          <option value="moderate">Moderate Growth Profile</option>
+                          <option value="high">High Alpha Pursuit</option>
+                        </select>
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
+                          <Activity className="w-4 h-4 text-primary" />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        {allocationFields.map((field) => (
+                          <div key={field.key} className="space-y-3">
+                            <div className="flex justify-between items-center px-1">
+                              <span className="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant/70">{field.label}</span>
+                              <span className="text-xs font-display font-bold text-primary">{formData[field.key]}%</span>
+                            </div>
+                            <input
+                              type="range"
+                              min="0"
+                              max="100"
+                              step="1"
+                              className="w-full h-1.5 bg-surface rounded-lg appearance-none cursor-pointer accent-secondary border border-outline-variant/10"
+                              value={formData[field.key]}
+                              onChange={(e) => setFormData({
+                                ...formData,
+                                [field.key]: Number(e.target.value || 0),
+                              })}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <div className="grid grid-cols-2 gap-3">
+                        <label className="space-y-2">
+                          <span className="text-[11px] uppercase tracking-widest text-on-surface-variant">Monthly Additions</span>
+                          <input
+                            type="number"
+                            min="0"
+                            className="w-full bg-surface p-3 rounded-2xl border border-outline-variant/20 focus:border-secondary outline-none transition-colors text-primary"
+                            value={formData.monthlyContribution}
+                            onChange={(e) => setFormData({...formData, monthlyContribution: Number(e.target.value || 0)})}
+                          />
+                        </label>
+                        <label className="space-y-2">
+                          <span className="text-[11px] uppercase tracking-widest text-on-surface-variant">Horizon Years</span>
+                          <input
+                            type="number"
+                            min="1"
+                            max="30"
+                            className="w-full bg-surface p-3 rounded-2xl border border-outline-variant/20 focus:border-secondary outline-none transition-colors text-primary"
+                            value={formData.horizonYears}
+                            onChange={(e) => setFormData({...formData, horizonYears: Number(e.target.value || 1)})}
+                          />
+                        </label>
+                      </div>
+                      <div className="rounded-2xl border border-secondary/15 bg-secondary/5 p-4 space-y-3">
+                        <div className="flex items-center justify-between text-sm">
+                          <div className="flex items-center gap-2">
+                            <span className="text-on-surface-variant font-medium">Allocation Total</span>
+                            {liveAnalytics.allocationTotal !== 100 && (
+                              <motion.button 
+                                initial={{ opacity: 0, scale: 0.9 }} 
+                                animate={{ opacity: 1, scale: 1 }}
+                                type="button"
+                                onClick={normalizeWeights}
+                                className="px-2 py-0.5 rounded-full bg-secondary/10 text-[10px] font-bold text-secondary border border-secondary/20 hover:bg-secondary hover:text-white transition-colors"
+                              >
+                                Fix Mix
+                              </motion.button>
+                            )}
+                          </div>
+                          <span className={`font-bold transition-colors ${liveAnalytics.allocationTotal === 100 ? 'text-primary' : 'text-secondary animate-pulse'}`}>
+                            {liveAnalytics.allocationTotal}%
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-3 text-sm">
+                          <div>
+                            <p className="text-on-surface-variant">Expected Return</p>
+                            <p className="font-display text-primary font-bold">{(liveAnalytics.expectedAnnualReturn * 100).toFixed(1)}%</p>
+                          </div>
+                          <div>
+                            <p className="text-on-surface-variant">Volatility</p>
+                            <p className="font-display text-primary font-bold">{(liveAnalytics.expectedAnnualVolatility * 100).toFixed(1)}%</p>
+                          </div>
+                          <div>
+                            <p className="text-on-surface-variant">Projected Value</p>
+                            <p className="font-display text-primary font-bold">{formatNprCompact(liveAnalytics.projectedValue)}</p>
+                          </div>
+                          <div>
+                            <p className="text-on-surface-variant">Live Score</p>
+                            <p className="font-display text-primary font-bold">{liveAnalytics.efficiencyScore}/100</p>
+                          </div>
+                        </div>
+                        <p className="text-[11px] leading-relaxed text-on-surface-variant">
+                          Metrics update from the entered portfolio mix in real time. If the allocation does not total 100%, the engine normalizes the weights before running the model.
+                        </p>
+                      </div>
                     </div>
                       <button 
                         type="submit"
                         className="w-full bg-primary text-white p-5 rounded-2xl font-bold hover:bg-secondary transition-colors"
                       >
-                        Initialize Quantamental Audit
+                        Run AI Portfolio Audit
                       </button>
                   </motion.form>
                 )}
@@ -336,7 +436,7 @@ Important: You MUST provide a numeric efficiency score (1-100) based on your ana
                     
                     <div>
                       <p className="font-display text-2xl font-bold text-primary mb-2">Analyzing Horizons...</p>
-                      <p className="text-on-surface-variant text-sm max-w-xs mx-auto">Cross-referencing AUM with current market technicals.</p>
+                      <p className="text-on-surface-variant text-sm max-w-xs mx-auto">Running live portfolio math and generating advisor-style commentary from the computed analytics.</p>
                     </div>
                   </div>
                 )}
@@ -357,8 +457,28 @@ Important: You MUST provide a numeric efficiency score (1-100) based on your ana
                         <div className="h-1.5 w-full bg-secondary/10 rounded-full overflow-hidden">
                           <motion.div initial={{ width: 0 }} animate={{ width: `${auditScore || 0}%` }} className="h-full bg-secondary" transition={{ duration: 1 }} />
                         </div>
+                        {computedMetrics && (
+                          <div className="grid grid-cols-2 gap-3 text-sm">
+                            <div className="rounded-2xl bg-white/50 p-3">
+                              <p className="text-on-surface-variant">Expected Return</p>
+                              <p className="font-display font-bold text-primary">{(computedMetrics.expectedAnnualReturn * 100).toFixed(1)}%</p>
+                            </div>
+                            <div className="rounded-2xl bg-white/50 p-3">
+                              <p className="text-on-surface-variant">Volatility</p>
+                              <p className="font-display font-bold text-primary">{(computedMetrics.expectedAnnualVolatility * 100).toFixed(1)}%</p>
+                            </div>
+                            <div className="rounded-2xl bg-white/50 p-3">
+                              <p className="text-on-surface-variant">Resilience</p>
+                              <p className="font-display font-bold text-primary">{computedMetrics.resilienceScore}/100</p>
+                            </div>
+                            <div className="rounded-2xl bg-white/50 p-3">
+                              <p className="text-on-surface-variant">Projected Value</p>
+                              <p className="font-display font-bold text-primary">{formatNprCompact(computedMetrics.projectedValue)}</p>
+                            </div>
+                          </div>
+                        )}
                         <div className="text-sm text-on-surface-variant leading-relaxed whitespace-pre-line min-h-[100px]">
-                          {auditResult || 'Synthesizing technical audit...'}
+                          {auditResult || 'Synthesizing portfolio guidance...'}
                         </div>
                       </div>
                     </div>

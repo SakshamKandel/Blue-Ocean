@@ -36,9 +36,8 @@ The firm combines forensic accounting with forward-looking market analysis to bu
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('NVIDIA API Error:', response.status, errorText);
-      return new Response(JSON.stringify({ error: errorText }), { status: response.status });
+      console.error('NVIDIA API Error:', response.status);
+      return new Response(JSON.stringify({ error: 'Upstream AI request failed.' }), { status: 502 });
     }
 
     const reader = response.body?.getReader();
