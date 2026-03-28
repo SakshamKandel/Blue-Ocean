@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
         <div className="w-full border-t border-outline-variant/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant/60 text-xs text-center md:text-left">
           <div className="flex flex-col items-center md:items-start gap-1">
-            <p>© 2024 Blue Ocean Inco Pvt Ltd. Kathmandu, Nepal.</p>
+            <p>© 2026 Blue Ocean Inco Pvt Ltd. Kathmandu, Nepal.</p>
             <a
               href="https://kurlybrains.com"
               target="_blank"

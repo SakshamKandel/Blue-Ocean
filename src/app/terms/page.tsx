@@ -32,7 +32,7 @@ export default function Terms() {
           <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Legal</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary tracking-tight mb-6">Terms of Service</h1>
-            <p className="text-on-surface-variant mb-12">Last updated: March 2024</p>
+            <p className="text-on-surface-variant mb-12">Last updated: March 2026</p>
           </motion.div>
 
           <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="prose prose-lg max-w-none text-on-surface-variant space-y-8">
