@@ -19,13 +19,66 @@ const staggerContainer: Variants = {
 export default function Strategy() {
   const [auditState, setAuditState] = React.useState<'idle' | 'processing' | 'result'>('idle');
   const [formData, setFormData] = React.useState({ aum: '', risk: 'moderate', assets: 'equities' });
+  const [auditResult, setAuditResult] = React.useState('');
+  const [auditScore, setAuditScore] = React.useState(0);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
-  const handleAudit = (e: React.FormEvent) => {
+  const handleAudit = async (e: React.FormEvent) => {
     e.preventDefault();
     setAuditState('processing');
-    setTimeout(() => setAuditState('result'), 3000);
+    setAuditResult('');
+    setAuditScore(0);
+    
+    try {
+      const prompt = `Perform a 'Quantamental Audit' on this hypothetical portfolio:
+AUM: ${formData.aum}
+Risk Tolerance: ${formData.risk}
+Target Assets: ${formData.assets}
+
+Provide a concise, professional analysis (2 paragraphs). 
+IMPORTANT: At the end of your response, strictly include the numeric efficiency score in this EXACT format: [[SCORE:XX]] where XX is 1-100.`;
+
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [{ role: 'user', content: prompt }],
+        }),
+      });
+
+      if (!res.ok) throw new Error('Audit failed');
+
+      const reader = res.body?.getReader();
+      const decoder = new TextDecoder();
+      let accumulated = '';
+      
+      if (reader) {
+        setAuditState('result');
+        let done = false;
+        while (!done) {
+          const { value, done: readerDone } = await reader.read();
+          done = readerDone;
+          if (value) {
+            const chunk = decoder.decode(value, { stream: true });
+            accumulated += chunk;
+            
+            // Try to extract score
+            const scoreMatch = accumulated.match(/\[\[SCORE:(\d+)\]\]/);
+            if (scoreMatch) {
+              setAuditScore(parseInt(scoreMatch[1]));
+              // Clean the display text from the score token
+              setAuditResult(accumulated.replace(/\[\[SCORE:\d+\]\]/, '').trim());
+            } else {
+              setAuditResult(accumulated.trim());
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      setAuditState('idle');
+    }
   };
   
   return (
@@ -226,13 +279,12 @@ export default function Strategy() {
                         <option value="high">High Alpha Pursuit</option>
                       </select>
                     </div>
-                    <button 
-                      type="submit"
-                      className="w-full bg-primary text-white p-5 rounded-2xl font-bold hover:bg-secondary transition-colors"
-                    >
-                      Initialize Quantamental Audit
-                    </button>
-                    <p className="text-[10px] text-on-surface-variant/60">AI model meta/llama-3.1-8b-instruct will process your request.</p>
+                      <button 
+                        type="submit"
+                        className="w-full bg-primary text-white p-5 rounded-2xl font-bold hover:bg-secondary transition-colors"
+                      >
+                        Initialize Quantamental Audit
+                      </button>
                   </motion.form>
                 )}
 
@@ -276,14 +328,14 @@ export default function Strategy() {
                       <div className="space-y-4">
                         <div className="flex justify-between items-center">
                           <span className="text-sm font-medium">Efficiency Score</span>
-                          <span className="font-display font-bold text-primary">84/100</span>
+                          <span className="font-display font-bold text-primary">{auditScore || '...'}/100</span>
                         </div>
                         <div className="h-1.5 w-full bg-secondary/10 rounded-full overflow-hidden">
-                          <motion.div initial={{ width: 0 }} animate={{ width: '84%' }} className="h-full bg-secondary" transition={{ duration: 1 }} />
+                          <motion.div initial={{ width: 0 }} animate={{ width: `${auditScore || 0}%` }} className="h-full bg-secondary" transition={{ duration: 1 }} />
                         </div>
-                        <p className="text-sm text-on-surface-variant leading-relaxed">
-                          Your hypothetical NPR {formData.aum} portfolio shows 16% exposure to technical inefficiencies. Recommendation: Shift 12% to Blue Ocean Alpha Equities.
-                        </p>
+                        <div className="text-sm text-on-surface-variant leading-relaxed whitespace-pre-line min-h-[100px]">
+                          {auditResult || 'Synthesizing technical audit...'}
+                        </div>
                       </div>
                     </div>
                     <button 
