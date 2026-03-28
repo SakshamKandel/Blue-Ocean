@@ -21,23 +21,34 @@ export default function Strategy() {
   const [formData, setFormData] = React.useState({ aum: '', risk: 'moderate', assets: 'equities' });
   const [auditResult, setAuditResult] = React.useState('');
   const [auditScore, setAuditScore] = React.useState(0);
+  const [validationError, setValidationError] = React.useState('');
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   const handleAudit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate AUM
+    const aumClean = formData.aum.replace(/[^0-9]/g, '');
+    if (!formData.aum.trim() || !/[0-9]/.test(formData.aum)) {
+      setValidationError('Please enter a real financial value (e.g. 50M or 1Cr)');
+      return;
+    }
+    
+    setValidationError('');
     setAuditState('processing');
     setAuditResult('');
     setAuditScore(0);
     
     try {
-      const prompt = `Perform a 'Quantamental Audit' on this hypothetical portfolio:
-AUM: ${formData.aum}
-Risk Tolerance: ${formData.risk}
-Target Assets: ${formData.assets}
+      const prompt = `As the Blue Ocean Inco AI concierge, provide a professional 'Quantamental Audit' on this specific portfolio:
+Scale: NPR ${formData.aum} 
+Strategy: ${formData.risk === 'high' ? 'High Alpha Pursuit' : formData.risk === 'moderate' ? 'Moderate Growth' : 'Low Risk Preservation'}
+Asset Focus: ${formData.assets}
 
-Provide a concise, professional analysis (2 paragraphs). 
-IMPORTANT: At the end of your response, strictly include the numeric efficiency score in this EXACT format: [[SCORE:XX]] where XX is 1-100.`;
+Your analysis must be tailored specifically to the NEPSE (Nepal Stock Exchange) landscape for an account of this size. 
+Format: Exactly 2 natural paragraphs. No markdown.
+Important: You MUST provide a numeric efficiency score (1-100) based on your analysis at the very end using this token: [[SCORE:XX]]`;
 
       const res = await fetch('/api/chat', {
         method: 'POST',
@@ -63,12 +74,12 @@ IMPORTANT: At the end of your response, strictly include the numeric efficiency 
             const chunk = decoder.decode(value, { stream: true });
             accumulated += chunk;
             
-            // Try to extract score
+            // Extraction & Cleanup
             const scoreMatch = accumulated.match(/\[\[SCORE:(\d+)\]\]/);
             if (scoreMatch) {
               setAuditScore(parseInt(scoreMatch[1]));
-              // Clean the display text from the score token
-              setAuditResult(accumulated.replace(/\[\[SCORE:\d+\]\]/, '').trim());
+              // Clean the display text of ALL score tokens globally
+              setAuditResult(accumulated.replace(/\[\[SCORE:\d+\]\]/g, '').trim());
             } else {
               setAuditResult(accumulated.trim());
             }
@@ -264,11 +275,24 @@ IMPORTANT: At the end of your response, strictly include the numeric efficiency 
                       <input 
                         type="text" 
                         placeholder="Hypothetical AUM (e.g. 50M NPR)" 
-                        className="w-full bg-surface p-4 rounded-2xl border border-outline-variant/20 focus:border-secondary outline-none transition-colors text-primary"
+                        className={`w-full bg-surface p-4 rounded-2xl border ${validationError ? 'border-red-500/50' : 'border-outline-variant/20'} focus:border-secondary outline-none transition-all text-primary shadow-sm`}
                         value={formData.aum}
-                        onChange={(e) => setFormData({...formData, aum: e.target.value})}
+                        onChange={(e) => {
+                          setFormData({...formData, aum: e.target.value});
+                          if(validationError) setValidationError('');
+                        }}
+                        onBlur={() => {
+                          if (!formData.aum.trim() || !/[0-9]/.test(formData.aum)) {
+                            setValidationError('Enter a real value');
+                          }
+                        }}
                         required
                       />
+                      {validationError && (
+                        <motion.p initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-[11px] text-red-500 font-bold ml-2">
+                          ! {validationError}
+                        </motion.p>
+                      )}
                       <select 
                         className="w-full bg-surface p-4 rounded-2xl border border-outline-variant/20 focus:border-secondary outline-none transition-colors text-primary appearance-none"
                         value={formData.risk}
