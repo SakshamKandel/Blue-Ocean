@@ -2,53 +2,57 @@
 
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { Shield, BarChart3, Eye, ArrowRight } from "lucide-react";
+import { Shield, BarChart3, Eye, ArrowRight, Binary, Fingerprint, Search } from "lucide-react";
+import Link from "next/link";
 
 /** 
- * THE STRATEGIC HORIZON (STABLE VERTICAL VERSION)
- * A cinematic vertical stacking experience for institutional strategy.
- * Replaces the horizontal scroll to avoid pinning conflicts with the Hero.
+ * THE PRECISION MATRIX (OPTION 2)
+ * A high-density institutional data-hub.
+ * Focuses on structural precision, technical metadata, and forensic authority.
  */
 
-const strategySegments = [
+const matrixModules = [
   {
-    number: "01",
+    id: "STRAT-001",
     title: "Forensic Research",
-    role: "The CA Standard",
-    description: "We dissect balance sheets the way only Chartered Accountants can. Every position is built on verified numbers, not narratives.",
-    details: [
-      "Line-by-line financial audit",
-      "Intrinsic value verification",
-      "Scrutiny of hidden liabilities"
+    subtitle: "PRIMARY_DIRECTIVE",
+    description: "Deep-layer balance sheet analysis. We audit the numbers to find the true intrinsic value before market validation.",
+    status: "VERIFIED_CA_LED",
+    technicals: [
+      { label: "Scrutiny", value: "Line-by-Line" },
+      { label: "Integrity", value: "CA-Verified" },
+      { label: "Focus", value: "Intrinsic" }
     ],
-    icon: Eye,
-    gradient: "from-blue-500/5 to-transparent"
+    icon: Search,
+    accent: "text-blue-600"
   },
   {
-    number: "02",
+    id: "RISK-002",
     title: "Multi-Layer Risk",
-    role: "Capital Preservation",
-    description: "Capital preservation comes before growth. Our multi-layer risk framework is engineered to protect you in every market cycle.",
-    details: [
-      "Rigorous sizing discipline",
-      "Non-correlated asset allocation",
-      "Stop-loss & liquidity checks"
+    subtitle: "DEFENSIVE_PROTOCOL",
+    description: "Multi-layered risk engineering. Capital preservation is prioritized through rigorous sizing and liquidity checks.",
+    status: "PROTECTED",
+    technicals: [
+      { label: "Exposure", value: "Controlled" },
+      { label: "Hedge", value: "Structural" },
+      { label: "Check", value: "Non-Correlated" }
     ],
     icon: Shield,
-    gradient: "from-emerald-500/5 to-transparent"
+    accent: "text-emerald-600"
   },
   {
-    number: "03",
+    id: "GROW-003",
     title: "Sustainable Alpha",
-    role: "Compounding Growth",
-    description: "We pursue returns that compound through cycles, not headlines. Our goal is steady, research-backed outperformance.",
-    details: [
-      "Cycle-aware positioning",
-      "Benchmark outperformance",
-      "Transparent, CA-verified reporting"
+    subtitle: "ALPHA_GENERATION",
+    description: "Research-backed outperformance that compounds through cycles. We ignore market noise to capture fundamental growth.",
+    status: "OPTIMIZED",
+    technicals: [
+      { label: "Cycle", value: "Aware" },
+      { label: "Yield", value: "Compounding" },
+      { label: "Reporting", value: "Transparent" }
     ],
     icon: BarChart3,
-    gradient: "from-indigo-500/5 to-transparent"
+    accent: "text-indigo-600"
   }
 ];
 
@@ -56,134 +60,121 @@ export default function HorizontalScrollFramework() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section ref={containerRef} className="relative bg-surface-lowest overflow-hidden">
-      {/* ═══════════════════════ HEADER SECTION ═══════════════════════ */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-20">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-px bg-primary" />
-          <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px]">Strategic Horizon</span>
-        </div>
+    <section ref={containerRef} className="relative bg-surface-lowest overflow-hidden border-y border-outline-variant/10">
+      {/* ═══════════════════════ MATRIX GRID BACKGROUND ═══════════════════════ */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+           style={{ 
+             backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', 
+             backgroundSize: '40px 40px' 
+           }} 
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32 relative z-10">
         
-        <div className="grid lg:grid-cols-2 gap-12 items-end">
-          <div>
-            <h2 className="font-display text-5xl md:text-8xl font-black text-primary tracking-tighter leading-[0.9] mb-8">
-              The Blue Ocean<br/>
-              <span className="text-primary/20 italic">Trajectory.</span>
-            </h2>
+        {/* HEADER: TERMINAL STYLE */}
+        <div className="mb-20">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-mono text-[9px] font-bold tracking-[0.3em] text-primary/30 uppercase">[SEC_TYPE: STRATEGY_DOSSIER]</span>
+            <div className="h-[1px] flex-grow bg-primary/5" />
           </div>
-          <div className="pb-4">
-            <div className="space-y-8 max-w-lg">
-              <div className="relative pl-8 border-l border-secondary/30">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary mb-3">Evolutionary Phase 01</p>
-                <p className="text-lg text-on-surface-variant leading-relaxed opacity-80 font-medium italic">
-                  &quot;Transitioning from specialized equity research to institutional-grade wealth management.&quot;
-                </p>
-              </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-end">
+            <div>
+              <h2 className="font-display text-4xl md:text-7xl font-black text-primary tracking-tighter leading-none mb-6">
+                The Precision<br/>
+                <span className="text-secondary italic underline decoration-primary/5 underline-offset-12">Matrix.</span>
+              </h2>
+            </div>
+            <div className="pb-2">
+              <p className="font-mono text-[11px] leading-relaxed text-on-surface-variant opacity-60 max-w-md">
+                // DATA_STREAM: BLUE_OCEAN_INCO_STRATEGIC_TRAJECTORY
+                <br />
+                Institutional-grade forensic research coupled with multi-layered risk protocols to ensure sustainable alpha generation in volatile regional markets.
+              </p>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* ═══════════════════════ STACKING CARDS ═══════════════════════ */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-40 space-y-12 md:space-y-32">
-        {strategySegments.map((segment, idx) => (
-          <div 
-            key={idx} 
-            className="sticky top-24 md:top-32 w-full perspective-1000"
-          >
+        {/* THE MATRIX MODULES */}
+        <div className="grid md:grid-cols-3 gap-1 lg:gap-px bg-outline-variant/10 border border-outline-variant/10 rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/5">
+          {matrixModules.map((module, idx) => (
             <motion.div
-              initial={{ opacity: 0, y: 50, rotateX: -5 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "circOut" }}
-              className={`relative overflow-hidden rounded-[2.5rem] md:rounded-[4rem] border border-outline-variant/10 bg-white/70 backdrop-blur-3xl p-8 md:p-20 shadow-2xl shadow-primary/5 group hover:border-primary/20 transition-all duration-700`}
+              key={module.id}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.2 }}
+              className="bg-white p-8 md:p-12 flex flex-col justify-between min-h-[500px] group relative overflow-hidden"
             >
-              {/* Subtle Background Interaction */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${segment.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-1000`} />
-              
-              <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-                
-                {/* Visual Identity */}
-                <div className="order-2 lg:order-1">
-                   <div className="flex items-center gap-6 mb-10">
-                      <div className="w-20 h-20 rounded-3xl bg-primary/5 border border-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-700">
-                         <segment.icon className="w-10 h-10" />
-                      </div>
-                      <div>
-                         <span className="text-6xl font-black text-primary/[0.05] leading-none mb-1 block select-none">#{segment.number}</span>
-                         <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-primary/40">Component Identity</span>
-                      </div>
-                   </div>
+              {/* Card Background Patterns */}
+              <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-700">
+                <module.icon className="w-32 h-32" />
+              </div>
 
-                   <h3 className="text-4xl md:text-6xl font-display font-black text-primary tracking-tighter leading-[0.95] mb-6">
-                      {segment.title}
-                   </h3>
-                   
-                   <p className="text-lg leading-relaxed text-on-surface-variant font-medium opacity-70 italic border-l-2 border-primary/10 pl-6 mb-10">
-                      {segment.description}
-                   </p>
-
-                   <div className="space-y-4">
-                    {segment.details.map((detail, i) => (
-                      <div key={i} className="flex items-center gap-4 group/item">
-                        <div className="w-2 h-2 rounded-full bg-primary/20 group-hover/item:bg-primary transition-colors" />
-                        <span className="text-[11px] font-bold uppercase tracking-widest text-primary/50 group-hover/item:text-primary transition-colors">{detail}</span>
-                      </div>
-                    ))}
+              <div>
+                <div className="flex items-center justify-between mb-12">
+                  <span className="font-mono text-[10px] font-bold text-primary/30 tracking-widest">{module.id}</span>
+                  <div className="px-3 py-1 bg-zinc-50 border border-zinc-100 rounded-md">
+                    <span className={`font-mono text-[8px] font-bold ${module.accent} tracking-tighter`}>{module.status}</span>
                   </div>
                 </div>
 
-                {/* Data/Detail Side */}
-                <div className="order-1 lg:order-2">
-                   <div className="aspect-[4/3] rounded-[2rem] bg-zinc-50 border border-zinc-100 p-8 flex flex-col justify-between group-hover:scale-[1.02] transition-transform duration-700">
-                      <div className="flex justify-between items-start">
-                         <div className="space-y-1">
-                            <p className="text-[9px] font-bold uppercase tracking-widest text-primary/30">Institutional Standard</p>
-                            <p className="text-xs font-bold text-primary">Blue Ocean Ref: 2024-X{segment.number}</p>
-                         </div>
-                         <div className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-[8px] font-bold uppercase text-emerald-600">Verified</span>
-                         </div>
-                      </div>
-
-                      <div className="flex flex-col gap-4">
-                         <div className="h-px bg-primary/5 w-full" />
-                         <div className="flex items-end justify-between">
-                            <div className="space-y-4">
-                               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary">{segment.role}</p>
-                               <Link href="/strategy" className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary group/link">
-                                  Learn More <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
-                               </Link>
-                            </div>
-                            <div className="text-right">
-                               <span className="text-5xl font-display font-black text-primary/10">{segment.number}</span>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
+                <div className="mb-8">
+                  <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-primary/40 block mb-4">{module.subtitle}</span>
+                  <h3 className="text-3xl md:text-4xl font-display font-black text-primary tracking-tight leading-[0.9] group-hover:text-secondary transition-colors duration-500">
+                    {module.title}
+                  </h3>
                 </div>
 
+                <p className="text-sm leading-relaxed text-on-surface-variant/70 mb-12 font-medium">
+                  {module.description}
+                </p>
               </div>
-            </motion.div>
-          </div>
-        ))}
-      </div>
 
-      {/* ═══════════════════════ TRANSITION FOOTER ═══════════════════════ */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-32 text-center">
-         <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="flex flex-col items-center gap-8"
-         >
-            <div className="w-px h-24 bg-gradient-to-b from-primary/20 to-transparent" />
-            <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary/30">End of Trajectory Analysis</p>
-         </motion.div>
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 gap-4">
+                  {module.technicals.map((tech, i) => (
+                    <div key={i} className="flex items-center justify-between border-b border-primary/[0.03] pb-2">
+                      <span className="font-mono text-[9px] font-bold uppercase text-primary/30 tracking-widest">{tech.label}</span>
+                      <span className="text-[10px] font-bold text-primary tracking-tight uppercase">{tech.value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-6">
+                   <Link href="/strategy" className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-primary group/link">
+                      Access Briefing <ArrowRight className="w-3 h-3 group-hover/link:translate-x-2 transition-transform" />
+                   </Link>
+                </div>
+              </div>
+
+              {/* Interaction Overlay */}
+              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-primary/5 group-hover:bg-secondary transition-colors duration-500" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* MATRIX FOOTER: TECHNICAL INFO */}
+        <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-primary/5 pt-12">
+            <div className="flex items-center gap-10">
+               <div className="flex items-center gap-3">
+                  <Binary className="w-4 h-4 text-primary/20" />
+                  <span className="font-mono text-[9px] font-bold tracking-widest text-primary/30 uppercase">Algorithm: CA_LED_ALPHA_V2</span>
+               </div>
+               <div className="hidden md:flex items-center gap-3">
+                  <Fingerprint className="w-4 h-4 text-primary/20" />
+                  <span className="font-mono text-[9px] font-bold tracking-widest text-primary/30 uppercase">Signature: BLUE_OCEAN_AUTH</span>
+               </div>
+            </div>
+            <div className="flex items-center gap-4">
+               <span className="text-[9px] font-bold text-primary/40 uppercase tracking-widest">Traverse the Precision Layer</span>
+               <div className="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center animate-bounce">
+                  <ArrowRight className="w-4 h-4 text-primary/40 rotate-90" />
+               </div>
+            </div>
+        </div>
+
       </div>
     </section>
   );
 }
-
-// Helper to keep Link working
-import Link from "next/link";
