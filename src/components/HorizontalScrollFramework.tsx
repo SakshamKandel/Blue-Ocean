@@ -154,26 +154,6 @@ export default function HorizontalScrollFramework() {
           ))}
         </div>
 
-        {/* MATRIX FOOTER: TECHNICAL INFO */}
-        <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-primary/5 pt-12">
-            <div className="flex items-center gap-10">
-               <div className="flex items-center gap-3">
-                  <Binary className="w-4 h-4 text-primary/20" />
-                  <span className="font-mono text-[9px] font-bold tracking-widest text-primary/30 uppercase">Algorithm: CA_LED_ALPHA_V2</span>
-               </div>
-               <div className="hidden md:flex items-center gap-3">
-                  <Fingerprint className="w-4 h-4 text-primary/20" />
-                  <span className="font-mono text-[9px] font-bold tracking-widest text-primary/30 uppercase">Signature: BLUE_OCEAN_AUTH</span>
-               </div>
-            </div>
-            <div className="flex items-center gap-4">
-               <span className="text-[9px] font-bold text-primary/40 uppercase tracking-widest">Traverse the Precision Layer</span>
-               <div className="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center animate-bounce">
-                  <ArrowRight className="w-4 h-4 text-primary/40 rotate-90" />
-               </div>
-            </div>
-        </div>
-
       </div>
     </section>
   );
