@@ -319,7 +319,7 @@ export function CinematicHero({
       </div>
 
       {/* BACKGROUND LAYER 2: Tactile CTA Buttons */}
-      <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-full px-4 gsap-reveal pointer-events-auto will-change-transform">
+      <div className="cta-wrapper absolute inset-0 z-10 flex flex-col items-center justify-center text-center w-full px-4 gsap-reveal pointer-events-auto will-change-transform">
         {/* The 'Radiant Mist' Taste Layer */}
         <div className="absolute inset-0 z-[-1] flex items-center justify-center overflow-hidden pointer-events-none">
           <div className="absolute w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,rgba(248,250,252,0.8)_0%,transparent_70%)] opacity-100" />
@@ -332,7 +332,7 @@ export function CinematicHero({
         <p className="text-on-surface-variant text-lg md:text-xl mb-12 max-w-xl mx-auto font-medium leading-relaxed opacity-80 tracking-wide">
           {ctaDescription}
         </p>
-        <div className="flex w-full max-w-sm flex-col gap-4 sm:max-w-none sm:flex-row sm:gap-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 w-full max-w-xl mx-auto">
           <a 
             href="/contact" 
             className="group relative flex items-center justify-center px-8 sm:px-12 py-5 rounded-2xl font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase text-[10px] overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 shadow-xl shadow-primary/10"

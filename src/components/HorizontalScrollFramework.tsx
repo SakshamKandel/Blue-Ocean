@@ -147,7 +147,7 @@ export default function HorizontalScrollFramework() {
                   <div className="w-12 h-px bg-primary" />
                   <span className="text-primary font-bold tracking-[0.4em] uppercase text-[10px]">Strategic Horizon</span>
                </div>
-               <h2 className="font-display text-[5rem] md:text-[8rem] lg:text-[10rem] font-black text-primary tracking-tighter leading-[0.8] mb-12">
+               <h2 className="font-display text-[4.5rem] md:text-[6.75rem] xl:text-[8rem] font-black text-primary tracking-tight leading-[0.92] mb-12">
                  The Blue Ocean<br/>
                  <span className="text-primary/20 italic">Trajectory.</span>
                </h2>
