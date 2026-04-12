@@ -12,20 +12,7 @@ const fadeInUp: Variants = {
 
 export default function Disclosures() {
   return (
-    <div className="min-h-screen bg-surface font-sans">
-      <nav className="fixed w-full z-50 top-0 px-4 py-2 sm:px-6 sm:py-3 mix-blend-difference text-white pointer-events-none">
-        <div className="max-w-7xl mx-auto flex flex-col gap-2 md:flex-row md:justify-between md:items-center pointer-events-auto">
-          <Link href="/">
-            <img src="/Logo.png" alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
-          </Link>
-          <div className="flex gap-5 sm:gap-8 md:gap-12 font-medium text-xs sm:text-sm tracking-wide overflow-x-auto whitespace-nowrap pb-1 md:pb-0 max-w-full">
-            <Link href="/" className="opacity-60 hover:opacity-100 transition-opacity">Home</Link>
-            <Link href="/about" className="opacity-60 hover:opacity-100 transition-opacity">About</Link>
-            <Link href="/strategy" className="hover:text-white transition-opacity opacity-60">Strategy</Link>
-            <Link href="/contact" className="hover:text-white transition-opacity opacity-60">Contact</Link>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-surface-lowest font-sans pt-32">
 
       <div className="pt-20 pb-12 px-6">
         <div className="max-w-3xl mx-auto">

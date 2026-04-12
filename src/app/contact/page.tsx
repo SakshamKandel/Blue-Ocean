@@ -22,37 +22,8 @@ export default function Contact() {
   const opacity = useTransform(scrollYProgress, [0, 0.18], [1, 0.4]);
 
   return (
-    <div className="min-h-screen bg-surface selection:bg-secondary/20 font-sans relative">
-      <nav className="fixed w-full z-50 top-0 px-4 py-2 sm:px-6 sm:py-3 mix-blend-difference text-white pointer-events-none">
-        <div className="max-w-7xl mx-auto flex flex-col gap-2 md:flex-row md:justify-between md:items-center pointer-events-auto">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="flex items-center">
-            <Link href="/">
-              <img src="/Logo.png" alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
-            </Link>
-          </motion.div>
-          <div className="flex gap-5 sm:gap-8 md:gap-12 font-medium text-xs sm:text-sm tracking-wide overflow-x-auto whitespace-nowrap pb-1 md:pb-0 max-w-full">
-             <Link href="/" className="opacity-60 hover:opacity-100 transition-opacity">Home</Link>
-             <Link href="/about" className="opacity-60 hover:opacity-100 transition-opacity">About</Link>
-             <Link href="/strategy" className="opacity-60 hover:opacity-100 transition-opacity">Strategy</Link>
-             <Link href="/portfolio" className="opacity-60 hover:opacity-100 transition-opacity">Portfolio</Link>
-             <Link href="/contact" className="opacity-100 border-b border-white pb-1">Contact</Link>
-          </div>
-          <motion.a 
-            href="https://www.nepalstock.com/" 
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            transition={{ delay: 0.7 }} 
-            className="hidden md:inline-flex px-6 py-2.5 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all pointer-events-auto"
-          >
-            NEPAL STOCK
-          </motion.a>
-        </div>
-      </nav>
-
-      {/* Hero Content */}
-      <section className="w-full bg-primary flex flex-col justify-center px-4 sm:px-6 relative overflow-hidden text-white pt-28 md:pt-20 pb-12">
+    <div className="min-h-screen bg-surface-lowest selection:bg-secondary/20 font-sans relative">
+      <section className="w-full bg-primary flex flex-col justify-center px-4 sm:px-6 relative overflow-hidden text-white pt-32 pb-12">
         <motion.div
           style={{ y, opacity }}
           className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-primary-container/45 via-primary to-primary pointer-events-none"
@@ -67,13 +38,13 @@ export default function Contact() {
                    Get in Touch
                  </span>
                </motion.div>
-               <motion.h1 variants={fadeInUp} className="font-display text-5xl sm:text-7xl md:text-[5rem] font-bold tracking-tighter leading-[0.9] text-white mb-6">
-                 Connect with <br/>
-                 <span className="text-secondary-fixed-dim">Clarity.</span>
-               </motion.h1>
-               <motion.p variants={fadeInUp} className="text-primary-fixed-dim text-lg max-w-md font-light leading-relaxed mb-12">
-                 Whether you&apos;re a seasoned investor or just starting your journey, our team is ready to guide you through every step.
-               </motion.p>
+                <motion.h1 variants={fadeInUp} className="font-display text-5xl sm:text-7xl md:text-[5rem] font-black tracking-tighter leading-[0.85] text-white mb-6">
+                  Institutional <br/>
+                  <span className="text-secondary-fixed-dim italic font-light">Inquiries.</span>
+                </motion.h1>
+                <motion.p variants={fadeInUp} className="text-primary-fixed-dim text-lg max-w-md font-light leading-relaxed mb-12 opacity-80">
+                  Direct channels for Institutional Partners, Real Estate Developers, and Private Share Placements. Our 100% CA-led team ensures professional engagement from the first touchpoint.
+                </motion.p>
 
                <motion.div variants={staggerContainer} className="space-y-6">
                  <motion.div variants={fadeInUp} className="flex items-center gap-5">
@@ -134,10 +105,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <label className="block text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-2">Subject</label>
-                    <select className="w-full bg-surface border border-outline-variant/30 rounded-xl px-5 py-3.5 outline-none focus:border-secondary transition-colors text-primary">
-                      <option>General Inquiry</option>
-                      <option>Investment Opportunity</option>
-                      <option>Regulatory</option>
+                    <select className="w-full bg-surface border border-outline-variant/30 rounded-xl px-5 py-3.5 outline-none focus:border-secondary transition-colors text-primary appearance-none">
+                      <option>Institutional Partnership</option>
+                      <option>Real Estate Proposal</option>
+                      <option>Private Share Placement</option>
+                      <option>Careers & Talent</option>
+                      <option>General Support</option>
                     </select>
                   </div>
                   <div>
@@ -164,10 +137,10 @@ export default function Contact() {
           
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { title: 'Inquiry', desc: 'Reach out via the form or phone for an initial consultation.' },
-              { title: 'Strategy Alignment', desc: 'Discussing your risk profile and growth objectives.' },
-              { title: 'Due Diligence', desc: 'Full KYC and regulatory compliance checks by our CAs.' },
-              { title: 'Activation', desc: 'Seamless capital deployment into your chosen vehicle.' },
+              { title: 'Forensic Inquiry', desc: 'Direct engagement via our institutional channels for a preliminary thesis review.' },
+              { title: 'Strategic Alignment', desc: 'Collaborating to map your capital objectives against our risk horizons.' },
+              { title: 'CA Due Diligence', desc: 'Rigorous structural and regulatory audit of the deployment framework.' },
+              { title: 'Alpha Activation', desc: 'Seamless placement into forensic-backed asset classes or real estate.' },
             ].map((step, i) => (
               <motion.div key={step.title} variants={fadeInUp} className="relative p-8 bg-surface-lowest rounded-3xl border border-outline-variant/10">
                 <div className="text-secondary font-display text-5xl font-bold mb-4 opacity-20">{i + 1}</div>
@@ -190,10 +163,10 @@ export default function Contact() {
 
           <div className="space-y-6">
             {[
-              { q: 'Who can become a promoter at Blue Ocean Inco?', a: 'We welcome both institutional and high-net-worth individual investors who align with our long-term vision and radical transparency ethics.' },
-              { q: 'Is there a minimum investment threshold?', a: 'Yes, because of the forensic rigor and bespoke nature of our strategies, we maintain a minimum allocation threshold. Please contact us for details.' },
-              { q: 'How often is performance reported?', a: 'While the digital portal provides 24/7 visibility, we issue formal audited quarterly performance reports to all promoters.' },
-              { q: 'What is the lock-in period for alternative assets?', a: 'Lock-in periods vary depending on the liquidity tier of the asset class (e.g., real estate has a different horizon than equity funds).' },
+              { q: 'Who can partner with Blue Ocean Inco?', a: 'We focus on Institutional Partners and High-Net-Worth individuals who value forensic precision and long-term capital preservation.' },
+              { q: 'What is the minimum allocation threshold?', a: 'Due to the institutional rigor of our forensic auditing and bespoke management, we maintain strict minimum entry thresholds per asset class.' },
+              { q: 'How is performance transparency handled?', a: 'Our proprietary digital portal provides real-time visibility into your capital deployment, supplemented by audited quarterly reports.' },
+              { q: 'What is the horizon for real estate exits?', a: 'Real estate positions are typically held on a 5–7 year horizon to maximize development yields and capital appreciation.' },
             ].map((faq) => (
               <motion.div key={faq.q} variants={fadeInUp} className="p-8 bg-surface rounded-3xl border border-outline-variant/10 group">
                 <h4 className="font-display text-lg font-bold text-primary mb-3 group-hover:text-secondary transition-colors">{faq.q}</h4>

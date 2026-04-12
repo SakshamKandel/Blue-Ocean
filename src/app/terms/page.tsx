@@ -12,27 +12,17 @@ const fadeInUp: Variants = {
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-surface font-sans">
-      <nav className="fixed w-full z-50 top-0 px-4 py-2 sm:px-6 sm:py-3 mix-blend-difference text-white pointer-events-none">
-        <div className="max-w-7xl mx-auto flex flex-col gap-2 md:flex-row md:justify-between md:items-center pointer-events-auto">
-          <Link href="/">
-            <img src="/Logo.png" alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
-          </Link>
-          <div className="flex gap-5 sm:gap-8 md:gap-12 font-medium text-xs sm:text-sm tracking-wide overflow-x-auto whitespace-nowrap pb-1 md:pb-0 max-w-full">
-            <Link href="/" className="opacity-60 hover:opacity-100 transition-opacity">Home</Link>
-            <Link href="/about" className="opacity-60 hover:opacity-100 transition-opacity">About</Link>
-            <Link href="/strategy" className="hover:text-white transition-opacity opacity-60">Strategy</Link>
-            <Link href="/contact" className="hover:text-white transition-opacity opacity-60">Contact</Link>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-surface-lowest font-sans pt-32">
 
       <div className="pt-20 pb-12 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
-            <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Legal</p>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-primary tracking-tight mb-6">Terms of Service</h1>
-            <p className="text-on-surface-variant mb-12">Last updated: March 2026</p>
+            <p className="text-secondary text-[10px] font-bold uppercase tracking-[0.5em] mb-4">Firm Governance</p>
+            <h1 className="font-display text-5xl md:text-7xl font-black text-primary tracking-tighter mb-8 leading-[0.85]">
+              Terms of <br/>
+              <span className="text-secondary italic font-light">Service.</span>
+            </h1>
+            <p className="text-on-surface-variant text-xl mb-20 font-light opacity-70">Last updated: April 2026</p>
           </motion.div>
 
           <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="prose prose-lg max-w-none text-on-surface-variant space-y-8">
@@ -68,7 +58,7 @@ export default function Terms() {
 
             <section>
               <h2 className="font-display text-2xl font-bold text-primary mb-4">7. Contact</h2>
-              <p className="leading-relaxed">For questions about these terms, contact us at legal@blueoceaninco.com or write to Blue Ocean Inco Pvt Ltd, Kathmandu, Nepal.</p>
+              <p className="leading-relaxed">For questions about these terms, contact us at <span className="font-bold text-primary">info@blueocean.com.np</span> or write to Blue Ocean Inco Pvt. Ltd., Kathmandu, Nepal.</p>
             </section>
           </motion.div>
         </div>

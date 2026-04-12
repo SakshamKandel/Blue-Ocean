@@ -1,0 +1,742 @@
+⨯ ./src/app/page.tsx:100:21
+Expected '</', got 'jsx text'
+  [90m 98 |[0m               <motion.h2 variants={fadeInUp} className=[32m"font-display text-5xl md:text-7xl...[0m
+  [90m 99 |[0m                 [33mForensic[0m rigor <br/>meets modern alpha.
+[31m[1m>[0m [90m100 |[0m               </h2 >
+  [90m    |[0m                     [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m101 |[0m               <motion.p variants={fadeInUp} className=[32m"text-on-surface-variant text-xl le...[0m
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^[0m
+  [90m102 |[0m                  [33mOur[0m foundation is built on [35m100[0m% [33mCA[0m-led governance, ensuring regulatory i...
+  [90m103 |[0m               </motion.p>
+  [90m104 |[0m
+
+Parsing ecmascript source code failed
+
+
+⨯ ./src/app/page.tsx:100:21
+Expected '</', got 'jsx text'
+  [90m 98 |[0m               <motion.h2 variants={fadeInUp} className=[32m"font-display text-5xl md:text-7xl...[0m
+  [90m 99 |[0m                 [33mForensic[0m rigor <br/>meets modern alpha.
+[31m[1m>[0m [90m100 |[0m               </h2 >
+  [90m    |[0m                     [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m101 |[0m               <motion.p variants={fadeInUp} className=[32m"text-on-surface-variant text-xl le...[0m
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^[0m
+  [90m102 |[0m                  [33mOur[0m foundation is built on [35m100[0m% [33mCA[0m-led governance, ensuring regulatory i...
+  [90m103 |[0m               </motion.p>
+  [90m104 |[0m
+
+Parsing ecmascript source code failed
+
+
+[browser] Uncaught Error: ./src/app/page.tsx:100:21
+Expected '</', got 'jsx text'
+   98 |               <motion.h2 variants={fadeInUp} className="font-display text-5xl md:text-7xl...
+   99 |                 Forensic rigor <br/>meets modern alpha.
+> 100 |               </h2 >
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 101 |               <motion.p variants={fadeInUp} className="text-on-surface-variant text-xl le...
+      | ^^^^^^^^^^^^^^
+  102 |                  Our foundation is built on 100% CA-led governance, ensuring regulatory i...
+  103 |               </motion.p>
+  104 |
+
+Parsing ecmascript source code failed
+
+
+    at <unknown> (Error: ./src/app/page.tsx:100:21)
+    at <unknown> (Error: (./src/app/page.tsx:100:21)
+[browser] ./src/app/page.tsx:100:21
+Expected '</', got 'jsx text'
+   98 |               <motion.h2 variants={fadeInUp} className="font-display text-5xl md:text-7xl...
+   99 |                 Forensic rigor <br/>meets modern alpha.
+> 100 |               </h2 >
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 101 |               <motion.p variants={fadeInUp} className="text-on-surface-variant text-xl le...
+      | ^^^^^^^^^^^^^^
+  102 |                  Our foundation is built on 100% CA-led governance, ensuring regulatory i...
+  103 |               </motion.p>
+  104 |
+
+Parsing ecmascript source code failed 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/app/page.tsx:100:21
+Expected '</', got 'jsx text'
+   98 |               <motion.h2 variants={fadeInUp} className="font-display text-5xl md:text-7xl...
+   99 |                 Forensic rigor <br/>meets modern alpha.
+> 100 |               </h2 >
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 101 |               <motion.p variants={fadeInUp} className="text-on-surface-variant text-xl le...
+      | ^^^^^^^^^^^^^^
+  102 |                  Our foundation is built on 100% CA-led governance, ensuring regulatory i...
+  103 |               </motion.p>
+  104 |
+
+Parsing ecmascript source code failed 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/app/page.tsx:100:21
+Expected '</', got 'jsx text'
+   98 |               <motion.h2 variants={fadeInUp} className="font-display text-5xl md:text-7xl...
+   99 |                 Forensic rigor <br/>meets modern alpha.
+> 100 |               </h2 >
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 101 |               <motion.p variants={fadeInUp} className="text-on-surface-variant text-xl le...
+      | ^^^^^^^^^^^^^^
+  102 |                  Our foundation is built on 100% CA-led governance, ensuring regulatory i...
+  103 |               </motion.p>
+  104 |
+
+Parsing ecmascript source code failed 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+⨯ ReferenceError: Navbar is not defined
+    at RootLayout (src\app\layout.tsx:39:10)
+  37 |       <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
+  38 |         <div className="grain-overlay" />
+> 39 |         <Navbar />
+     |          ^
+  40 |         <SmoothScroll>
+  41 |           {children}
+  42 |           <Chatbot /> {
+  digest: '1944091369'
+}
+⨯ ReferenceError: Navbar is not defined
+    at RootLayout (src\app\layout.tsx:39:10)
+  37 |       <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
+  38 |         <div className="grain-overlay" />
+> 39 |         <Navbar />
+     |          ^
+  40 |         <SmoothScroll>
+  41 |           {children}
+  42 |           <Chatbot /> {
+  digest: '1944091369'
+}
+⨯ ReferenceError: Navbar is not defined
+    at RootLayout (src\app\layout.tsx:39:10)
+  37 |       <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
+  38 |         <div className="grain-overlay" />
+> 39 |         <Navbar />
+     |          ^
+  40 |         <SmoothScroll>
+  41 |           {children}
+  42 |           <Chatbot /> {
+  digest: '1944091369'
+}
+⨯ ReferenceError: Navbar is not defined
+    at RootLayout (src\app\layout.tsx:39:10)
+  37 |       <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
+  38 |         <div className="grain-overlay" />
+> 39 |         <Navbar />
+     |          ^
+  40 |         <SmoothScroll>
+  41 |           {children}
+  42 |           <Chatbot /> {
+  digest: '1944091369'
+}
+⨯ ReferenceError: Navbar is not defined
+    at RootLayout (src\app\layout.tsx:39:10)
+  37 |       <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
+  38 |         <div className="grain-overlay" />
+> 39 |         <Navbar />
+     |          ^
+  40 |         <SmoothScroll>
+  41 |           {children}
+  42 |           <Chatbot /> {
+  digest: '1944091369'
+}
+⨯ ReferenceError: Navbar is not defined
+    at RootLayout (src\app\layout.tsx:39:10)
+  37 |       <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
+  38 |         <div className="grain-overlay" />
+> 39 |         <Navbar />
+     |          ^
+  40 |         <SmoothScroll>
+  41 |           {children}
+  42 |           <Chatbot /> {
+  digest: '1944091369'
+}
+[browser] Uncaught ReferenceError: Navbar is not defined
+    at RootLayout (src\app\layout.tsx:39:10)
+    at resolveErrorDev (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:1919:105)
+    at processFullStringRow (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:2434:29)
+    at processFullBinaryRow (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:2393:9)
+    at processBinaryChunk (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:2502:221)
+    at progress (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_0p3wegg._.js:2689:13)
+  37 |       <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
+  38 |         <div className="grain-overlay" />
+> 39 |         <Navbar />
+     |          ^
+  40 |         <SmoothScroll>
+  41 |           {children}
+  42 |           <Chatbot />
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+⨯ ReferenceError: useScroll is not defined
+    at Navbar (src\components\Navbar.tsx:9:23)
+   7 |   const pathname = usePathname();
+   8 |   const isHome = pathname === "/";
+>  9 |   const { scrollY } = useScroll();
+     |                       ^
+  10 |   const [hidden, setHidden] = useState(false);
+  11 |   const [scrolled, setScrolled] = useState(false);
+  12 | {
+  digest: '691704141'
+}
+⨯ ReferenceError: useScroll is not defined
+    at Navbar (src\components\Navbar.tsx:9:23)
+   7 |   const pathname = usePathname();
+   8 |   const isHome = pathname === "/";
+>  9 |   const { scrollY } = useScroll();
+     |                       ^
+  10 |   const [hidden, setHidden] = useState(false);
+  11 |   const [scrolled, setScrolled] = useState(false);
+  12 | {
+  digest: '691704141'
+}
+[browser] Uncaught ReferenceError: useScroll is not defined
+    at Navbar (file://E:/B;ueocean/.next/dev/static/chunks/src_components_0-2.cr1._.js:888:25)
+    at Object.react_stack_bottom_frame (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+    at RootLayout (src\app\layout.tsx:40:9)
+  38 |       <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
+  39 |         <div className="grain-overlay" />
+> 40 |         <Navbar />
+     |         ^
+  41 |         <SmoothScroll>
+  42 |           {children}
+  43 |           <Chatbot />
+⨯ ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  [90m2 |[0m [36mimport[0m { motion, useScroll, useMotionValueEvent } [36mfrom[0m [32m"framer-motion"[0m;
+  [90m3 |[0m [36mimport[0m [33mLink[0m [36mfrom[0m [32m"next/link"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { usePathname } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m  |[0m          [31m[1m^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { [33mChevronRight[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m6 |[0m
+  [90m7 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mNavbar[0m() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx
+
+
+
+./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[31m[1m>[0m [90m1 |[0m [36mimport[0m [33mReact[0m, { useState } [36mfrom[0m [32m"react"[0m;
+  [90m  |[0m                 [31m[1m^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { motion, useScroll, useMotionValueEvent } [36mfrom[0m [32m"framer-motion"[0m;
+  [90m3 |[0m [36mimport[0m [33mLink[0m [36mfrom[0m [32m"next/link"[0m;
+  [90m4 |[0m [36mimport[0m { usePathname } [36mfrom[0m [32m"next/navigation"[0m;
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx
+
+
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] Uncaught Error: ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx
+
+
+    at <unknown> (Error: ./src/components/Navbar.tsx:4:10)
+    at <unknown> (Error: (./src/components/Navbar.tsx:4:10)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:4:10
+You're importing a module that depends on `usePathname` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+> 4 | import { usePathname } from "next/navigation";
+    |          ^^^^^^^^^^^
+  5 | import { ChevronRight } from "lucide-react";
+  6 |
+  7 | export default function Navbar() {
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./src/components/Navbar.tsx:1:17
+You're importing a module that depends on `useState` into a React Server Component module. This API is only available in Client Components. To fix, mark the file (or its parent) with the `"use client"` directive.
+    Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+> 1 | import React, { useState } from "react";
+    |                 ^^^^^^^^
+  2 | import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+  3 | import Link from "next/link";
+  4 | import { usePathname } from "next/navigation";
+
+Ecmascript file had an error
+
+Import trace:
+  Server Component:
+    ./src/components/Navbar.tsx
+    ./src/app/layout.tsx 
+    at handleErrors (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Uncaught ReferenceError: Link is not defined
+    at eval (file://E:/B;ueocean/.next/dev/static/chunks/src_0oktxb7._.js?id=%255Bproject%255D%252Fsrc%252Fcomponents%252FHorizontalScrollFramework.tsx+%255Bapp-client%255D+%2528ecmascript%2529:241:268)
+    at Array.map (<anonymous>)
+    at HorizontalScrollFramework (file://E:/B;ueocean/.next/dev/static/chunks/src_0oktxb7._.js?id=%255Bproject%255D%252Fsrc%252Fcomponents%252FHorizontalScrollFramework.tsx+%255Bapp-client%255D+%2528ecmascript%2529:153:35)
+    at Object.react_stack_bottom_frame (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6691:24)
+    at runWithFiberInDEV (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performSyncWorkOnRoot (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10179:316)
+    at flushSyncWork$1 (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9230:86)
+    at Object.scheduleRefresh (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:299:13)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:391:33)
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:384:38)
+    at applyUpdate (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:878:31)
+    at <unknown> (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:886:13)
+    at Home (file://E:/B;ueocean/.next/dev/static/chunks/_0z2ls5c._.js:968:215)
+    at ClientPageRoot (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_05_puo1._.js:5337:50)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (file://E:/B;ueocean/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+^C

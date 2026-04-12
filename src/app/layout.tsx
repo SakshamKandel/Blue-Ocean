@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import Chatbot from "@/components/Chatbot";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,7 +16,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Blue Ocean Inco | About Us",
+  title: "Blue Ocean Inco | Precision Investing",
   description: "The Union of Precision and Vision.",
   icons: {
     icon: "/Logo.png",
@@ -35,6 +36,8 @@ export default function RootLayout({
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
+        <div className="grain-overlay" />
+        <Navbar />
         <SmoothScroll>
           {children}
           <Chatbot />

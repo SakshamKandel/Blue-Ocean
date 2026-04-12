@@ -12,39 +12,27 @@ const fadeInUp: Variants = {
 
 export default function Careers() {
   return (
-    <div className="min-h-screen bg-surface font-sans">
-      <nav className="fixed w-full z-50 top-0 px-4 py-2 sm:px-6 sm:py-3 mix-blend-difference text-white pointer-events-none">
-        <div className="max-w-7xl mx-auto flex flex-col gap-2 md:flex-row md:justify-between md:items-center pointer-events-auto">
-          <Link href="/">
-            <img src="/Logo.png" alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
-          </Link>
-          <div className="flex gap-5 sm:gap-8 md:gap-12 font-medium text-xs sm:text-sm tracking-wide overflow-x-auto whitespace-nowrap pb-1 md:pb-0 max-w-full">
-            <Link href="/" className="opacity-60 hover:opacity-100 transition-opacity">Home</Link>
-            <Link href="/about" className="opacity-60 hover:opacity-100 transition-opacity">About</Link>
-            <Link href="/strategy" className="hover:text-white transition-opacity opacity-60">Strategy</Link>
-            <Link href="/portfolio" className="hover:text-white transition-opacity opacity-60">Portfolio</Link>
-            <Link href="/contact" className="hover:text-white transition-opacity opacity-60">Contact</Link>
-          </div>
-          <Link href="/contact" className="hidden md:inline-flex px-6 py-2.5 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all pointer-events-auto">
-            JOIN US
-          </Link>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-surface-lowest font-sans pt-32">
 
       <div className="pt-20 pb-12 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
-            <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Join Us</p>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-primary tracking-tight mb-6">Careers at Blue Ocean</h1>
-            <p className="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-16">We&apos;re building the future of CA-led investment management. If you thrive at the intersection of finance, technology, and integrity — we want to hear from you.</p>
+            <p className="text-secondary text-[10px] font-bold uppercase tracking-[0.5em] mb-4">Talent Acquisition</p>
+            <h1 className="font-display text-5xl md:text-7xl font-black text-primary tracking-tighter mb-8 leading-[0.85]">
+              Build the Future of <br/>
+              <span className="text-secondary italic font-light">Institutional Finance.</span>
+            </h1>
+            <p className="text-on-surface-variant text-xl max-w-2xl leading-relaxed mb-20 font-light opacity-70">
+              We are building the future of CA-led investment management. If you thrive at the intersection of forensic precision, capital architecture, and institutional integrity — join our mission.
+            </p>
           </motion.div>
 
           <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="space-y-6">
             {[
-              { title: 'Senior Financial Analyst', type: 'Full-time', location: 'Kathmandu', desc: 'Lead forensic analysis on potential investments and build financial models for portfolio evaluation.' },
-              { title: 'Portfolio Risk Manager', type: 'Full-time', location: 'Kathmandu', desc: 'Design and implement hedging strategies to protect downside while maintaining growth exposure.' },
-              { title: 'Frontend Engineer', type: 'Full-time', location: 'Remote', desc: 'Build premium client-facing dashboards and real-time portfolio tracking interfaces.' },
-              { title: 'Compliance Officer', type: 'Full-time', location: 'Kathmandu', desc: 'Ensure regulatory compliance across all jurisdictions and maintain our ethical governance framework.' },
+              { title: 'Investment Research Analyst', type: 'Full-time', location: 'Kathmandu HQ', desc: 'Execute bottom-up forensic research on listed equities and private placement opportunities.' },
+              { title: 'Forensic Audit Associate', type: 'Full-time', location: 'Kathmandu HQ', desc: 'Maintain structural integrity across our portfolio through rigorous balance sheet and compliance monitoring.' },
+              { title: 'Real Estate Operations Lead', type: 'Full-time', location: 'Kathmandu / Site', desc: 'Oversee the development and management of our strategic commercial real estate assets.' },
+              { title: 'Strategic Partnership Manager', type: 'Full-time', location: 'Hybrid', desc: 'Manage institutional relationships and facilitate capital alignment with our high-alpha objectives.' },
             ].map((role) => (
               <div key={role.title} className="p-8 bg-surface-lowest rounded-2xl hover:shadow-lg transition-shadow duration-300 group cursor-pointer">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -65,11 +53,11 @@ export default function Careers() {
             ))}
           </motion.div>
 
-          <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="mt-16 p-10 bg-primary rounded-3xl text-center">
-            <h3 className="font-display text-2xl font-bold text-white mb-4">Don&apos;t see your role?</h3>
-            <p className="text-white/70 mb-6 max-w-md mx-auto">We&apos;re always looking for exceptional talent. Send your resume and a brief note about what excites you about Blue Ocean Inco.</p>
-            <Link href="/contact" className="inline-block px-8 py-3 bg-white text-primary rounded-full font-semibold hover:bg-secondary-fixed transition-colors">
-              Get in Touch
+          <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="mt-20 p-12 bg-primary rounded-[3rem] text-center border border-white/10 shadow-2xl">
+            <h3 className="font-display text-3xl font-black text-white mb-6">The Future is Bespoke.</h3>
+            <p className="text-white/60 mb-10 max-w-xl mx-auto font-light leading-relaxed">We&apos;re always looking for exceptional talent from fiscal backgrounds. If you believe your expertise aligns with our forensic-first approach, we want to hear from you.</p>
+            <Link href="/contact" className="inline-flex px-12 py-5 bg-secondary text-primary rounded-full font-bold hover:bg-white transition-all shadow-xl">
+              Submit Your Thesis
             </Link>
           </motion.div>
         </div>

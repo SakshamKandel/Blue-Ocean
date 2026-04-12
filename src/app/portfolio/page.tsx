@@ -21,37 +21,8 @@ export default function Portfolio() {
   const y = useTransform(scrollYProgress, [0, 1], [0, -180]);
 
   return (
-    <div className="min-h-screen bg-surface selection:bg-secondary/20 font-sans relative">
-      <nav className="fixed w-full z-50 top-0 px-4 py-2 sm:px-6 sm:py-3 mix-blend-difference text-white pointer-events-none">
-        <div className="max-w-7xl mx-auto flex flex-col gap-2 md:flex-row md:justify-between md:items-center pointer-events-auto">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="flex items-center">
-            <Link href="/">
-              <img src="/Logo.png" alt="Logo" className="h-10 sm:h-12 w-auto object-contain" />
-            </Link>
-          </motion.div>
-          <div className="flex gap-5 sm:gap-8 md:gap-12 font-medium text-xs sm:text-sm tracking-wide overflow-x-auto whitespace-nowrap pb-1 md:pb-0 max-w-full">
-             <Link href="/" className="opacity-60 hover:opacity-100 transition-opacity">Home</Link>
-             <Link href="/about" className="opacity-60 hover:opacity-100 transition-opacity">About</Link>
-             <Link href="/strategy" className="opacity-60 hover:opacity-100 transition-opacity">Strategy</Link>
-             <Link href="/portfolio" className="opacity-100 border-b border-white pb-1">Portfolio</Link>
-             <Link href="/contact" className="opacity-60 hover:opacity-100 transition-opacity">Contact</Link>
-          </div>
-          <motion.a 
-            href="https://www.nepalstock.com/" 
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            transition={{ delay: 0.7 }} 
-            className="hidden md:inline-flex px-6 py-2.5 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all pointer-events-auto"
-          >
-            NEPAL STOCK
-          </motion.a>
-        </div>
-      </nav>
- 
-      {/* Hero */}
-      <section className="min-h-[45vh] w-full bg-primary flex flex-col justify-end px-4 sm:px-6 pb-10 relative overflow-hidden text-white pt-20 md:pt-16">
+    <div className="min-h-screen bg-surface-lowest selection:bg-secondary/20 font-sans relative">
+      <section className="min-h-[45vh] w-full bg-primary flex flex-col justify-end px-4 sm:px-6 pb-10 relative overflow-hidden text-white pt-32">
         <motion.div
           style={{ y }}
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary-container/40 via-primary to-primary pointer-events-none"
@@ -63,9 +34,9 @@ export default function Portfolio() {
                 Portfolio Overview
               </span>
             </motion.div>
-            <motion.h1 variants={fadeInUp} className="font-display text-5xl sm:text-7xl md:text-[6rem] font-bold tracking-tighter leading-[0.9] text-white mb-4">
-              Diversified Alpha. <br/>
-              <span className="text-secondary-fixed-dim">Measured Risk.</span>
+            <motion.h1 variants={fadeInUp} className="font-display text-5xl sm:text-7xl md:text-[6rem] font-black tracking-tighter leading-[0.85] text-white mb-4">
+              Precision Allocation. <br/>
+              <span className="text-secondary-fixed-dim italic font-light">Institutional Growth.</span>
             </motion.h1>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mt-4">
               <div className="px-5 py-3 rounded-full border border-white/20 backdrop-blur-md">
@@ -87,7 +58,7 @@ export default function Portfolio() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer}>
             <motion.p variants={fadeInUp} className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Financial Securities</motion.p>
             <motion.h2 variants={fadeInUp} className="font-display text-4xl md:text-6xl font-bold tracking-tight text-primary mb-16 leading-tight">
-              Liquid Instruments
+              Public Equities & <br/>Listed Growth
             </motion.h2>
           </motion.div>
 
@@ -96,8 +67,8 @@ export default function Portfolio() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div>
                 <p className="text-secondary-fixed-dim text-sm font-semibold uppercase tracking-widest mb-2">Featured Fund</p>
-                <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">Blue Chip Equity Fund</h3>
-                <p className="text-white/60 text-lg max-w-xl leading-relaxed">Our flagship equity fund invests in market-leading companies with strong fundamentals, sustainable moats, and consistent earnings growth.</p>
+                <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">Blue Ocean Core Equity</h3>
+                <p className="text-white/60 text-lg max-w-xl leading-relaxed">Our anchor equity strategy focuses on Category-1 and Category-2 listed companies with forensic-verified balance sheets and sustainable dividends.</p>
               </div>
               <div className="flex flex-wrap gap-6 shrink-0">
                 <div className="text-center">
@@ -135,8 +106,8 @@ export default function Portfolio() {
       <section className="py-28 px-6 bg-surface-lowest">
         <div className="max-w-5xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="text-center mb-16">
-            <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Risk-Reward Analysis</p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary">The Yield Spectrum</h2>
+            <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Return Benchmarks</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary">Alpha Horizons</h2>
           </motion.div>
           
           <div className="space-y-8">
@@ -172,10 +143,10 @@ export default function Portfolio() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <p className="text-secondary-fixed-dim text-sm font-semibold uppercase tracking-widest mb-4">Promoter Access</p>
-              <h2 className="font-display text-4xl md:text-6xl font-bold mb-8 leading-tight">Beyond Passive <br/>Investment.</h2>
-              <p className="text-white/70 text-lg leading-relaxed mb-8">
-                Being a promoter at Blue Ocean Inco means more than just capital growth. You become part of a transparent financial ecosystem designed by CAs to protect and empower.
-              </p>
+                <h2 className="font-display text-4xl md:text-6xl font-bold mb-8 leading-tight">Institutional <br/>Engagement.</h2>
+                <p className="text-white/70 text-lg leading-relaxed mb-8">
+                  Participation in Blue Ocean Inco isn&apos;t just passive capital; it&apos;s an alignment with a professional investment engine governed by 100% CA-led leadership.
+                </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
                   <h4 className="font-display font-semibold mb-2">24/7 Portal Access</h4>
@@ -213,21 +184,21 @@ export default function Portfolio() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <motion.p variants={fadeInUp} className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Non-Financial Assets</motion.p>
             <motion.h2 variants={fadeInUp} className="font-display text-4xl md:text-6xl font-bold tracking-tight text-primary mb-6 leading-tight">
-              Tangible Value
+              Real Estate & <br/>Strategic Assets
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-on-surface-variant text-lg leading-relaxed max-w-2xl mb-16">
-              Venture beyond the screen to build tangible value. Our non-financial portfolio targets stable, inflation-resistant assets with long-term appreciation potential.
+            <motion.p variants={fadeInUp} className="text-on-surface-variant text-xl leading-relaxed max-w-2xl mb-16 opacity-70">
+              Allocating toward the permanence of the ground. Our real estate portfolio focuses on high-yield commercial assets and strategic land banking in growth corridors.
             </motion.p>
           </motion.div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid md:grid-cols-2 gap-8">
             <motion.div variants={fadeInUp} className="p-10 bg-surface-lowest rounded-3xl border border-outline-variant/10 group hover:-translate-y-2 transition-transform duration-500">
               <Building2 className="w-10 h-10 text-secondary mb-6" strokeWidth={1.5} />
-              <h3 className="font-display text-2xl font-bold text-primary mb-4">Prime Commercial Space</h3>
-              <p className="text-on-surface-variant text-lg leading-relaxed mb-6">Strategic acquisition in Kathmandu&apos;s central business district. High-demand properties with institutional-grade tenants.</p>
+              <h3 className="font-display text-2xl font-bold text-primary mb-4">Core Commercial Assets</h3>
+              <p className="text-on-surface-variant text-lg leading-relaxed mb-6">Flagship acquisition in central Kathmandu. High-demand commercial floor space with professional anchor tenants and CA-managed yields.</p>
               <div className="flex flex-wrap gap-4">
-                <span className="px-4 py-2 rounded-full bg-surface text-sm font-medium text-primary">95% Occupancy</span>
-                <span className="px-4 py-2 rounded-full bg-surface text-sm font-medium text-primary">Real Estate</span>
+                <span className="px-4 py-2 rounded-full bg-surface text-sm font-bold text-secondary uppercase tracking-widest text-[10px]">Prime Hub</span>
+                <span className="px-4 py-2 rounded-full bg-surface text-sm font-bold text-primary uppercase tracking-widest text-[10px]">Exit Target: 2028</span>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="p-10 bg-surface-lowest rounded-3xl border border-outline-variant/10 group hover:-translate-y-2 transition-transform duration-500">
