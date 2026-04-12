@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { BookOpen, Newspaper, FileText } from 'lucide-react';
 
@@ -20,11 +19,11 @@ export default function Insights() {
   return (
     <div className="min-h-screen bg-surface-lowest font-sans pt-32 selection:bg-secondary/20">
       
-      <div className="pt-20 pb-32 px-6">
+      <div className="pt-12 md:pt-20 pb-20 md:pb-32 px-4 sm:px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="text-center mb-32">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="text-center mb-20 md:mb-32">
             <motion.p variants={fadeInUp} className="text-secondary text-[10px] font-bold uppercase tracking-[0.5em] mb-6">The Knowledge Layer</motion.p>
-            <motion.h1 variants={fadeInUp} className="font-display text-6xl md:text-9xl font-black text-primary tracking-tighter mb-10 leading-[0.85]">
+            <motion.h1 variants={fadeInUp} className="font-display text-5xl sm:text-6xl md:text-9xl font-black text-primary tracking-tighter mb-8 md:mb-10 leading-[0.9] md:leading-[0.85]">
               Insights & <br/>
               <span className="text-secondary italic font-light">Theses.</span>
             </motion.h1>
@@ -34,7 +33,7 @@ export default function Insights() {
           </motion.div>
 
           {/* Grid of Placeholders */}
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="grid md:grid-cols-3 gap-8 mb-32">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="grid md:grid-cols-3 gap-6 md:gap-8 mb-20 md:mb-32">
             {[
               { 
                 icon: BookOpen, 
@@ -54,11 +53,11 @@ export default function Insights() {
                 category: "Performance", 
                 desc: "Dissecting the cycles and drivers of our sustainable alpha during Q1 2026." 
               }
-            ].map((item, i) => (
+            ].map((item) => (
               <motion.div 
                 key={item.title} 
                 variants={fadeInUp}
-                className="p-12 bg-white rounded-[3rem] border border-outline-variant/10 shadow-xl shadow-black/[0.02] flex flex-col items-start group hover:border-primary/20 transition-all duration-500"
+                className="p-6 sm:p-8 lg:p-12 bg-white rounded-[2rem] md:rounded-[3rem] border border-outline-variant/10 shadow-xl shadow-black/[0.02] flex flex-col items-start group hover:border-primary/20 transition-all duration-500"
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   <item.icon className="w-8 h-8" strokeWidth={1.5} />
@@ -78,7 +77,7 @@ export default function Insights() {
             whileInView="visible" 
             viewport={{ once: true }} 
             variants={fadeInUp} 
-            className="p-20 bg-primary rounded-[4rem] text-center relative overflow-hidden shadow-2xl"
+            className="p-6 sm:p-10 md:p-20 bg-primary rounded-[2rem] md:rounded-[4rem] text-center relative overflow-hidden shadow-2xl"
           >
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
@@ -93,9 +92,9 @@ export default function Insights() {
                 <input 
                   type="email" 
                   placeholder="name@institutional.com" 
-                  className="flex-1 px-8 py-5 rounded-full bg-white/5 border border-white/10 text-white outline-none focus:border-secondary transition-all"
+                  className="min-w-0 flex-1 px-6 sm:px-8 py-5 rounded-full bg-white/5 border border-white/10 text-white outline-none focus:border-secondary transition-all"
                 />
-                <button type="submit" className="px-12 py-5 bg-secondary text-primary rounded-full font-bold hover:bg-white transition-all shadow-xl">
+                <button type="submit" className="px-8 sm:px-12 py-5 bg-secondary text-primary rounded-full font-bold hover:bg-white transition-all shadow-xl">
                   Connect
                 </button>
               </form>

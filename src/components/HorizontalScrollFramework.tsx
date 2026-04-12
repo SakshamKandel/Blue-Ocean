@@ -3,7 +3,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Shield, BarChart3, Eye, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 /** 
  * THE STRATEGIC HORIZON (REWORKED)
@@ -63,7 +62,73 @@ export default function HorizontalScrollFramework() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-surface-lowest">
+    <>
+    <section className="md:hidden bg-surface-lowest px-4 py-20 overflow-hidden">
+      <div className="mb-16">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-10 h-px bg-primary" />
+          <span className="text-primary font-bold tracking-[0.3em] uppercase text-[10px]">Strategic Horizon</span>
+        </div>
+        <h2 className="font-display text-5xl font-black text-primary tracking-tighter leading-[0.9] mb-8">
+          The Blue Ocean<br/>
+          <span className="text-primary/25 italic">Trajectory.</span>
+        </h2>
+        <div className="space-y-8">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary mb-3">Today</p>
+            <p className="text-base text-on-surface-variant leading-relaxed opacity-80 font-medium">
+              Public equities and private share placements, built on deep forensic research and CA-led due diligence.
+            </p>
+          </div>
+          <div className="border-l border-primary/10 pl-6">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary/40 mb-3">Tomorrow</p>
+            <p className="text-base text-on-surface-variant leading-relaxed opacity-70 font-medium italic">
+              Expanding into tangible real estate assets, bringing the same forensic discipline to regional property markets.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-6">
+        {strategySegments.map((segment) => (
+          <motion.article
+            key={segment.number}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 0.6, ease: "circOut" }}
+            className="rounded-[2rem] border border-outline-variant/10 bg-white p-6 shadow-xl shadow-primary/5"
+          >
+            <div className="mb-8 flex items-start justify-between gap-4">
+              <span className="text-6xl font-black leading-none text-primary/[0.06] select-none">{segment.number}</span>
+              <div className="w-14 h-14 rounded-2xl bg-primary/5 border border-primary/10 flex items-center justify-center text-primary">
+                <segment.icon className="w-7 h-7" />
+              </div>
+            </div>
+            <span className="text-secondary font-bold tracking-[0.3em] uppercase text-[10px] block mb-4">Strategic Pillar</span>
+            <h3 className="text-4xl font-display font-black text-primary tracking-tighter leading-none mb-3">
+              {segment.title}
+            </h3>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary/40 leading-relaxed mb-8">
+              {segment.role}
+            </p>
+            <p className="text-base leading-relaxed text-on-surface-variant/70 mb-8 font-medium italic border-l-2 border-primary/10 pl-5">
+              &quot;{segment.description}&quot;
+            </p>
+            <div className="space-y-4">
+              {segment.details.map((detail) => (
+                <div key={detail} className="flex items-center gap-4">
+                  <div className="w-2 h-2 rounded-full bg-primary/30" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary/60">{detail}</span>
+                </div>
+              ))}
+            </div>
+          </motion.article>
+        ))}
+      </div>
+    </section>
+
+    <section ref={containerRef} className="relative hidden h-[400vh] bg-surface-lowest md:block">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center">
         
         {/* THE OCEAN MIST BACKDROP */}
@@ -167,7 +232,7 @@ export default function HorizontalScrollFramework() {
                     </div>
                     
                     <p className="text-xl leading-relaxed text-on-surface-variant/70 mb-12 max-w-lg font-medium italic border-l-2 border-primary/10 pl-8">
-                       "{segment.description}"
+                       &quot;{segment.description}&quot;
                     </p>
 
                     <div className="space-y-6">
@@ -199,5 +264,6 @@ export default function HorizontalScrollFramework() {
 
       </div>
     </section>
+    </>
   );
 }

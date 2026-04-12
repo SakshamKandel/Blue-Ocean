@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 const fadeInUp: Variants = {
@@ -14,7 +13,7 @@ export default function Disclosures() {
   return (
     <div className="min-h-screen bg-surface-lowest font-sans pt-32">
 
-      <div className="pt-20 pb-12 px-6">
+      <div className="pt-12 md:pt-20 pb-12 px-4 sm:px-6 overflow-hidden">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Compliance</p>

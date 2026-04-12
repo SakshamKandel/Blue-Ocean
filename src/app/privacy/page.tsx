@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 const fadeInUp: Variants = {
@@ -14,11 +13,11 @@ export default function Privacy() {
   return (
     <div className="min-h-screen bg-surface-lowest font-sans pt-32">
 
-      <div className="pt-20 pb-12 px-6">
+      <div className="pt-12 md:pt-20 pb-12 px-4 sm:px-6 overflow-hidden">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
             <p className="text-secondary text-[10px] font-bold uppercase tracking-[0.5em] mb-4">Data Integrity</p>
-            <h1 className="font-display text-5xl md:text-7xl font-black text-primary tracking-tighter mb-8 leading-[0.85]">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-black text-primary tracking-tighter mb-8 leading-[0.9] md:leading-[0.85]">
               Privacy <br/>
               <span className="text-secondary italic font-light">Architecture.</span>
             </h1>

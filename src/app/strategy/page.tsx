@@ -113,7 +113,7 @@ export default function Strategy() {
                  Investment Strategy
                </span>
              </motion.div>
-             <motion.h1 variants={fadeInUp} className="font-display text-5xl sm:text-7xl md:text-[6rem] font-black tracking-tighter leading-[0.85] text-white mb-4">
+             <motion.h1 variants={fadeInUp} className="font-display text-4xl sm:text-6xl md:text-[6rem] font-black tracking-tighter leading-[0.95] sm:leading-[0.9] md:leading-[0.85] text-white mb-4">
                 The Blue Ocean <br/>
                 <span className="text-secondary-fixed-dim italic font-light">Strategy.</span>
               </motion.h1>
@@ -139,11 +139,11 @@ export default function Strategy() {
       </section>
 
       {/* ═══════════════════════ THE ECOSYSTEM ═══════════════════════ */}
-      <section className="py-28 px-6 bg-surface-lowest relative z-20">
+      <section className="py-20 md:py-28 px-4 sm:px-6 bg-surface-lowest relative z-20 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="mb-24">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="mb-16 md:mb-24">
             <motion.p variants={fadeInUp} className="text-secondary text-[10px] font-bold uppercase tracking-[0.5em] mb-6">Strategic Foundation</motion.p>
-            <motion.h2 variants={fadeInUp} className="font-display text-5xl md:text-8xl font-black tracking-tighter text-primary mb-10 leading-[0.85]">
+            <motion.h2 variants={fadeInUp} className="font-display text-4xl sm:text-5xl md:text-8xl font-black tracking-tighter text-primary mb-10 leading-[0.9] md:leading-[0.85]">
               The How.
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-on-surface-variant text-xl leading-relaxed max-w-3xl font-light opacity-70">
@@ -152,7 +152,7 @@ export default function Strategy() {
           </motion.div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid lg:grid-cols-3 gap-8">
-            <motion.div variants={fadeInUp} className="p-12 bg-white rounded-[3rem] border border-outline-variant/10 shadow-xl shadow-black/[0.02] flex flex-col h-full group hover:border-primary/20 transition-all duration-500">
+            <motion.div variants={fadeInUp} className="p-6 sm:p-10 lg:p-12 bg-white rounded-[2rem] md:rounded-[3rem] border border-outline-variant/10 shadow-xl shadow-black/[0.02] flex flex-col h-full group hover:border-primary/20 transition-all duration-500">
               <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 <FileCheck className="w-8 h-8" />
               </div>
@@ -165,7 +165,7 @@ export default function Strategy() {
               </div>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="p-12 bg-white rounded-[3rem] border border-outline-variant/10 shadow-xl shadow-black/[0.02] flex flex-col h-full group hover:border-primary/20 transition-all duration-500">
+            <motion.div variants={fadeInUp} className="p-6 sm:p-10 lg:p-12 bg-white rounded-[2rem] md:rounded-[3rem] border border-outline-variant/10 shadow-xl shadow-black/[0.02] flex flex-col h-full group hover:border-primary/20 transition-all duration-500">
               <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-10 group-hover:bg-secondary group-hover:text-white transition-all duration-500">
                 <Activity className="w-8 h-8" />
               </div>
@@ -178,7 +178,7 @@ export default function Strategy() {
               </div>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="p-12 bg-white rounded-[3rem] border border-outline-variant/10 shadow-xl shadow-black/[0.02] flex flex-col h-full group hover:border-primary/20 transition-all duration-500">
+            <motion.div variants={fadeInUp} className="p-6 sm:p-10 lg:p-12 bg-white rounded-[2rem] md:rounded-[3rem] border border-outline-variant/10 shadow-xl shadow-black/[0.02] flex flex-col h-full group hover:border-primary/20 transition-all duration-500">
               <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 <Shield className="w-8 h-8" />
               </div>
@@ -195,7 +195,7 @@ export default function Strategy() {
       </section>
 
       {/* ═══════════════════════ ASSET ALLOCATION ═══════════════════════ */}
-      <section className="py-28 px-6 bg-surface">
+      <section className="py-20 md:py-28 px-4 sm:px-6 bg-surface">
         <div className="max-w-5xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="text-center mb-16">
             <motion.p variants={fadeInUp} className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Allocation</motion.p>
@@ -219,7 +219,7 @@ export default function Strategy() {
       </section>
 
       {/* ═══════════════════════ ALPHA MODELS ═══════════════════════ */}
-      <section className="py-28 px-6 bg-surface">
+      <section className="py-20 md:py-28 px-4 sm:px-6 bg-surface">
         <div className="max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div variants={fadeInUp}>
@@ -289,7 +289,7 @@ export default function Strategy() {
                           <Activity className="w-4 h-4 text-primary" />
                         </div>
                       </div>
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {allocationFields.map((field) => (
                           <div key={field.key} className="space-y-3">
                             <div className="flex justify-between items-center px-1">
@@ -311,7 +311,7 @@ export default function Strategy() {
                           </div>
                         ))}
                       </div>
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <label className="space-y-2">
                           <span className="text-[11px] uppercase tracking-widest text-on-surface-variant">Monthly Additions</span>
                           <input
@@ -481,7 +481,7 @@ export default function Strategy() {
 
       {/* ═══════════════════════ RISK MANAGEMENT ═══════════════════════ */}
       <section className="py-28 bg-primary text-white overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
             <motion.p variants={fadeInUp} className="text-secondary-fixed-dim text-sm font-semibold uppercase tracking-widest mb-4">Risk Management</motion.p>
             <motion.h2 variants={fadeInUp} className="font-display text-4xl md:text-6xl font-bold tracking-tight mb-16 leading-tight">

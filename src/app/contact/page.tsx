@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
-import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 const fadeInUp: Variants = {
@@ -29,7 +28,7 @@ export default function Contact() {
           className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-primary-container/45 via-primary to-primary pointer-events-none"
         />
         <div className="max-w-7xl mx-auto w-full relative z-10">
-           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="grid md:grid-cols-2 gap-16 items-start">
+           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
              
              {/* Left: Info */}
              <motion.div variants={fadeInUp} className="flex flex-col">
@@ -38,11 +37,11 @@ export default function Contact() {
                    Get in Touch
                  </span>
                </motion.div>
-                <motion.h1 variants={fadeInUp} className="font-display text-5xl sm:text-7xl md:text-[5rem] font-black tracking-tighter leading-[0.85] text-white mb-6">
+                <motion.h1 variants={fadeInUp} className="font-display text-4xl sm:text-6xl md:text-[5rem] font-black tracking-tighter leading-[0.95] sm:leading-[0.9] md:leading-[0.85] text-white mb-6">
                   Institutional <br/>
                   <span className="text-secondary-fixed-dim italic font-light">Inquiries.</span>
                 </motion.h1>
-                <motion.p variants={fadeInUp} className="text-primary-fixed-dim text-lg max-w-md font-light leading-relaxed mb-12 opacity-80">
+                <motion.p variants={fadeInUp} className="text-primary-fixed-dim text-base sm:text-lg max-w-md font-light leading-relaxed mb-10 md:mb-12 opacity-80">
                   Direct channels for Institutional Partners, Real Estate Developers, and Private Share Placements. Our 100% CA-led team ensures professional engagement from the first touchpoint.
                 </motion.p>
 
@@ -63,7 +62,7 @@ export default function Contact() {
                    </div>
                    <div>
                      <p className="text-sm text-primary-fixed-dim uppercase tracking-wider mb-0.5 font-semibold">Phone</p>
-                     <p className="text-lg">+977 (1) 2345 678</p>
+                     <p className="text-lg">+977 9802320122</p>
                    </div>
                  </motion.div>
 
@@ -128,7 +127,7 @@ export default function Contact() {
       </section>
 
       {/* ═══════════════════════ ONBOARDING PROCESS ═══════════════════════ */}
-      <section className="py-28 px-4 sm:px-6 bg-surface">
+      <section className="py-20 md:py-28 px-4 sm:px-6 bg-surface">
         <div className="max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer} className="text-center mb-16">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">The Pathway</p>
@@ -142,7 +141,7 @@ export default function Contact() {
               { title: 'CA Due Diligence', desc: 'Rigorous structural and regulatory audit of the deployment framework.' },
               { title: 'Alpha Activation', desc: 'Seamless placement into forensic-backed asset classes or real estate.' },
             ].map((step, i) => (
-              <motion.div key={step.title} variants={fadeInUp} className="relative p-8 bg-surface-lowest rounded-3xl border border-outline-variant/10">
+              <motion.div key={step.title} variants={fadeInUp} className="relative p-6 sm:p-8 bg-surface-lowest rounded-3xl border border-outline-variant/10">
                 <div className="text-secondary font-display text-5xl font-bold mb-4 opacity-20">{i + 1}</div>
                 <h3 className="font-display text-xl font-bold text-primary mb-3">{step.title}</h3>
                 <p className="text-on-surface-variant text-sm leading-relaxed">{step.desc}</p>
@@ -154,7 +153,7 @@ export default function Contact() {
       </section>
 
       {/* ═══════════════════════ FAQ SECTION ═══════════════════════ */}
-      <section className="py-28 px-4 sm:px-6 bg-surface-lowest">
+      <section className="py-20 md:py-28 px-4 sm:px-6 bg-surface-lowest">
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer} className="mb-16">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Clarifications</p>
@@ -168,7 +167,7 @@ export default function Contact() {
               { q: 'How is performance transparency handled?', a: 'Our proprietary digital portal provides real-time visibility into your capital deployment, supplemented by audited quarterly reports.' },
               { q: 'What is the horizon for real estate exits?', a: 'Real estate positions are typically held on a 5–7 year horizon to maximize development yields and capital appreciation.' },
             ].map((faq) => (
-              <motion.div key={faq.q} variants={fadeInUp} className="p-8 bg-surface rounded-3xl border border-outline-variant/10 group">
+              <motion.div key={faq.q} variants={fadeInUp} className="p-6 sm:p-8 bg-surface rounded-3xl border border-outline-variant/10 group">
                 <h4 className="font-display text-lg font-bold text-primary mb-3 group-hover:text-secondary transition-colors">{faq.q}</h4>
                 <p className="text-on-surface-variant leading-relaxed">{faq.a}</p>
               </motion.div>

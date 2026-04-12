@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -15,11 +14,17 @@ import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
-  const { scrollY } = useScroll();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // REMOVED: Scroll hide logic to keep navbar permanent as per request
   const isVisible = true;
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -50,14 +55,14 @@ export default function Navbar() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="fixed top-0 left-0 right-0 z-[100] px-4 md:px-8 pt-4 md:pt-6 pointer-events-none"
         >
-          <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+          <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-2">
             
             {/* MODULE 1: LOGO */}
             <div className="pointer-events-auto">
               <Link 
                 href="/" 
                 className={cn(
-                  "flex items-center justify-center h-12 md:h-14 px-4 md:px-6 rounded-2xl transition-all duration-500 border group overflow-hidden shadow-sm",
+                  "flex items-center justify-center h-12 md:h-14 px-3 sm:px-4 md:px-6 rounded-2xl transition-all duration-500 border group overflow-hidden shadow-sm",
                   theme.bg
                 )}
               >
@@ -128,26 +133,81 @@ export default function Navbar() {
               <Link 
                 href="/contact"
                 className={cn(
-                  "flex items-center justify-center px-6 py-3 rounded-2xl text-[10px] font-bold tracking-[0.15em] uppercase transition-all duration-500 active:scale-95 text-center leading-tight whitespace-nowrap",
+                  "hidden sm:flex items-center justify-center px-4 md:px-6 py-3 rounded-2xl text-[9px] md:text-[10px] font-bold tracking-[0.12em] md:tracking-[0.15em] uppercase transition-all duration-500 active:scale-95 text-center leading-tight whitespace-nowrap",
                   theme.btn
                 )}
               >
-                Book a Consultation
+                <span className="hidden lg:inline">Book a </span>Consultation
               </Link>
 
               {/* MOBILE MENU TRIGGER */}
-              <button className={cn(
+              <button
+                type="button"
+                aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isMenuOpen}
+                onClick={() => setIsMenuOpen((open) => !open)}
+                className={cn(
                 "md:hidden flex items-center justify-center w-12 h-12 rounded-2xl border transition-all shadow-sm",
                 theme.bg,
                 theme.text
               )}>
-                <svg width="20" height="2" viewBox="0 0 20 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 1H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d={isMenuOpen ? "M2 2L18 12" : "M1 2H19"} stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d={isMenuOpen ? "M18 2L2 12" : "M1 12H19"} stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </button>
             </div>
 
           </div>
+
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+                className="md:hidden pointer-events-auto max-w-[1400px] mx-auto mt-3 rounded-2xl border bg-white/95 backdrop-blur-3xl shadow-2xl shadow-black/10 overflow-hidden"
+              >
+                <nav className="p-3">
+                  {navLinks.map((link) => {
+                    const isActive = pathname === link.href;
+                    return (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={cn(
+                          "flex items-center justify-between rounded-xl px-4 py-3 text-sm font-bold uppercase tracking-[0.16em] transition-colors",
+                          isActive ? "bg-primary text-white" : "text-primary/75 hover:bg-primary/5"
+                        )}
+                      >
+                        {link.name}
+                        {isActive && <span className="h-1.5 w-1.5 rounded-full bg-secondary-fixed-dim" />}
+                      </Link>
+                    );
+                  })}
+                  <div className="mt-3 grid grid-cols-1 gap-3 border-t border-primary/10 pt-3">
+                    <Link
+                      href="/contact"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center justify-center rounded-xl bg-primary px-4 py-4 text-[10px] font-bold uppercase tracking-[0.2em] text-white"
+                    >
+                      Book a Consultation
+                    </Link>
+                    <a
+                      href="https://www.nepalstock.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center rounded-xl border border-primary/10 px-4 py-4 text-[10px] font-bold uppercase tracking-[0.2em] text-primary"
+                    >
+                      NEPSE Portal
+                    </a>
+                  </div>
+                </nav>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.header>
       )}
     </AnimatePresence>

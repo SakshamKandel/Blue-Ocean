@@ -300,7 +300,7 @@ export function CinematicHero({
   return (
     <div
       ref={containerRef}
-      className={cn("relative w-screen h-screen overflow-hidden flex items-center justify-center bg-surface-lowest text-on-surface font-sans antialiased", className)}
+      className={cn("relative w-full h-screen overflow-hidden flex items-center justify-center bg-surface-lowest text-on-surface font-sans antialiased", className)}
       style={{ perspective: "1500px" }}
       {...props}
     >
@@ -309,40 +309,40 @@ export function CinematicHero({
       <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-50" aria-hidden="true" />
 
       {/* BACKGROUND LAYER: Hero Texts */}
-      <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 will-change-transform transform-style-3d">
-        <h1 className="text-track gsap-reveal text-3d-matte text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tight mb-2">
+      <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-full px-4 will-change-transform transform-style-3d">
+        <h1 className="text-track gsap-reveal text-3d-matte text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tight mb-2">
           {tagline1}
         </h1>
-        <h2 className="text-days gsap-reveal text-silver-matte text-5xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tighter">
+        <h2 className="text-days gsap-reveal text-silver-matte text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tighter">
           {tagline2}
         </h2>
       </div>
 
       {/* BACKGROUND LAYER 2: Tactile CTA Buttons */}
-      <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 gsap-reveal pointer-events-auto will-change-transform">
+      <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-full px-4 gsap-reveal pointer-events-auto will-change-transform">
         {/* The 'Radiant Mist' Taste Layer */}
         <div className="absolute inset-0 z-[-1] flex items-center justify-center overflow-hidden pointer-events-none">
           <div className="absolute w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,rgba(248,250,252,0.8)_0%,transparent_70%)] opacity-100" />
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'200\' height=\'200\' viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 100 Q 50 50 100 100 T 200 100\' stroke=\'%233B82F6\' fill=\'none\' stroke-width=\'0.8\' /%3E%3C/svg%3E")', backgroundSize: '300px 300px' }} />
         </div>
 
-        <h2 className="text-4xl md:text-6xl lg:text-[7.5rem] font-black mb-8 tracking-tighter bg-gradient-to-b from-primary via-primary/80 to-primary/40 bg-clip-text text-transparent drop-shadow-sm">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[7.5rem] font-black mb-8 tracking-tighter bg-gradient-to-b from-primary via-primary/80 to-primary/40 bg-clip-text text-transparent drop-shadow-sm max-w-5xl">
           {ctaHeading}
         </h2>
         <p className="text-on-surface-variant text-lg md:text-xl mb-12 max-w-xl mx-auto font-medium leading-relaxed opacity-80 tracking-wide">
           {ctaDescription}
         </p>
-        <div className="flex flex-col sm:flex-row gap-8">
+        <div className="flex w-full max-w-sm flex-col gap-4 sm:max-w-none sm:flex-row sm:gap-8">
           <a 
             href="/contact" 
-            className="group relative flex items-center justify-center px-12 py-5 rounded-2xl font-bold tracking-[0.2em] uppercase text-[10px] overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 shadow-xl shadow-primary/10"
+            className="group relative flex items-center justify-center px-8 sm:px-12 py-5 rounded-2xl font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase text-[10px] overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 shadow-xl shadow-primary/10"
           >
             <div className="absolute inset-0 bg-primary group-hover:bg-secondary transition-colors" />
             <span className="relative z-10 text-white">Book a Consultation</span>
           </a>
           <a 
             href="/strategy" 
-            className="group relative flex items-center justify-center px-12 py-5 rounded-2xl font-bold tracking-[0.2em] uppercase text-[10px] overflow-hidden transition-all duration-500 border border-primary/20 hover:border-primary/40 hover:scale-105 active:scale-95"
+            className="group relative flex items-center justify-center px-8 sm:px-12 py-5 rounded-2xl font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase text-[10px] overflow-hidden transition-all duration-500 border border-primary/20 hover:border-primary/40 hover:scale-105 active:scale-95"
           >
             <div className="absolute inset-0 bg-white group-hover:bg-zinc-50 transition-colors" />
             <span className="relative z-10 text-primary">Explore Our Strategy</span>
@@ -361,14 +361,14 @@ export function CinematicHero({
           <div className="relative w-full h-full max-w-7xl mx-auto px-4 lg:px-12 flex flex-col justify-evenly lg:grid lg:grid-cols-3 items-center lg:gap-8 z-10 py-6 lg:py-0">
             
             <div className="card-right-text gsap-reveal order-1 lg:order-3 flex justify-center lg:justify-end z-20 w-full">
-              <h2 className="text-6xl md:text-[6rem] lg:text-[8rem] font-black uppercase tracking-tighter text-card-silver-matte lg:mt-0">
+              <h2 className="text-4xl sm:text-5xl md:text-[6rem] lg:text-[8rem] font-black uppercase tracking-tighter text-card-silver-matte lg:mt-0 text-center">
                 {brandName}
               </h2>
             </div>
 
-            <div className="mockup-scroll-wrapper order-2 lg:order-2 relative w-full h-[380px] lg:h-[600px] flex items-center justify-center z-10" style={{ perspective: "1000px" }}>
+            <div className="mockup-scroll-wrapper order-2 lg:order-2 relative w-full h-[330px] sm:h-[380px] lg:h-[600px] flex items-center justify-center z-10" style={{ perspective: "1000px" }}>
               
-              <div className="relative w-full h-full flex items-center justify-center transform scale-[0.65] md:scale-85 lg:scale-100">
+              <div className="relative w-full h-full flex items-center justify-center transform scale-[0.56] sm:scale-[0.65] md:scale-[0.85] lg:scale-100">
                 
                 <div
                   ref={mockupRef}
