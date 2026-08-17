@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
-import SmoothScroll from "@/components/SmoothScroll";
-import Chatbot from "@/components/Chatbot";
-import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,8 +13,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Blue Ocean Inco | Precision Investing",
-  description: "The Union of Precision and Vision.",
+  title: "Blue Ocean Inco Pvt. Ltd. | Strategic Investments & Meaningful Growth",
+  description:
+    "Blue Ocean Inco Pvt. Ltd. is an investment company based in Kathmandu, Nepal, combining capital, insight, and strategic partnerships to identify opportunities with sustainable long-term value.",
   icons: {
     icon: "/Logo.png",
     shortcut: "/Logo.png",
@@ -35,13 +33,8 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="font-sans min-h-full flex flex-col bg-surface-lowest text-on-surface">
-        <div className="grain-overlay" />
-        <Navbar />
-        <SmoothScroll>
-          {children}
-          <Chatbot />
-        </SmoothScroll>
+      <body className="font-sans min-h-full flex flex-col bg-[#f8fafc] text-slate-900 overflow-x-hidden">
+        {children}
       </body>
     </html>
   );

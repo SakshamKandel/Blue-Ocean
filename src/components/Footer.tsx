@@ -1,76 +1,71 @@
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
+  const navLinks = [
+    { label: "About Us", href: "#about" },
+    { label: "What We Do", href: "#what-we-do" },
+    { label: "Our Approach", href: "#approach" },
+    { label: "Why Choose Us", href: "#values" },
+    { label: "Meet Our Team", href: "#people" },
+    { label: "Contact Us", href: "#contact" },
+  ];
+
   return (
-    <footer className="bg-surface-lowest pt-12 pb-12 px-4 sm:px-6 border-t border-outline-variant/10">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-left text-on-surface-variant text-sm">
-          <div>
-            <Link href="/" className="inline-block mb-6">
-              <div className="h-14 w-auto relative">
-                <img src="/Logo.png" alt="Blue Ocean Inco Logo" className="h-full w-auto object-contain" />
-              </div>
-            </Link>
-            <p className="leading-relaxed font-medium text-primary mb-2">Blue Ocean Inco Pvt. Ltd.</p>
-            <p className="leading-relaxed opacity-70 italic">Forensic precision. Sustainable alpha.</p>
-          </div>
-          <div>
-            <p className="font-semibold uppercase tracking-wider text-xs text-on-surface mb-4">Company</p>
-            <div className="space-y-3">
-              <Link href="/about" className="block hover:text-primary transition-colors">About Us</Link>
-              <Link href="/portfolio" className="block hover:text-primary transition-colors">Portfolio</Link>
-              <Link href="/strategy" className="block hover:text-primary transition-colors">Our Strategy</Link>
-              <Link href="/careers" className="block hover:text-primary transition-colors">Careers</Link>
-            </div>
-          </div>
-          <div>
-            <p className="font-semibold uppercase tracking-wider text-xs text-on-surface mb-4">Resources</p>
-            <div className="space-y-3">
-              <Link href="/insights" className="block hover:text-primary transition-colors">Insights</Link>
-              <Link href="/privacy" className="block hover:text-primary transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="block hover:text-primary transition-colors">Terms of Service</Link>
-              <Link href="/disclosures" className="block hover:text-primary transition-colors">Regulatory Disclosures</Link>
-            </div>
-          </div>
-          <div>
-            <p className="font-semibold uppercase tracking-wider text-xs text-on-surface mb-4">Headquarters</p>
-            <p className="leading-relaxed">Boudha, Kathmandu, Nepal.<br />+977 9802320122</p>
-            <p className="mt-2 text-xs truncate">hello@blueoceaninco.com</p>
-            <Link href="/contact" className="inline-block mt-4 text-secondary hover:text-primary transition-colors font-medium">Get in Touch →</Link>
-          </div>
-        </div>
+    <footer className="bg-[#04152d] text-slate-300 py-10 border-t border-blue-950/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 flex flex-col items-center text-center">
+        
+        {/* BRAND LOGO (Boxy rounded-lg) */}
+        <Link href="/" className="inline-block p-1.5 px-3 rounded-lg bg-white/95 backdrop-blur-sm shadow-xs mb-4 hover:scale-105 transition-transform">
+          <Image
+            src="/Logo.png"
+            alt="Blue Ocean Inco Logo"
+            width={160}
+            height={45}
+            className="h-7 sm:h-8 w-auto object-contain"
+          />
+        </Link>
 
-        {/* RISK DISCLAIMER */}
-        <div className="mt-16 p-6 rounded-2xl bg-primary/5 border border-primary/10 text-center">
-          <p className="text-[10px] sm:text-xs leading-relaxed text-on-surface-variant italic font-medium">
-            &quot;Investments are subject to market risk. Please read all scheme-related documents carefully.&quot;
-          </p>
-        </div>
+        {/* TAGLINE */}
+        <p className="text-xs text-slate-300 max-w-md leading-relaxed mb-5 font-normal">
+          Creating long-term value through strategic investment, trusted partnerships, and responsible growth.
+        </p>
 
-        <div className="w-full border-t border-outline-variant/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant/60 text-xs text-center md:text-left">
-          <div className="flex flex-col items-center md:items-start gap-1">
-            <p>© 2026 Blue Ocean Inco Pvt. Ltd. All rights reserved.</p>
+        {/* SIMPLE HORIZONTAL NAVIGATION LINKS */}
+        <nav className="flex flex-wrap justify-center items-center gap-5 sm:gap-7 text-xs font-semibold text-slate-200 mb-6 pb-6 border-b border-white/10 w-full max-w-2xl">
+          {navLinks.map((link) => (
             <a
-              href="https://kurlybrains.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] text-on-surface-variant/35 hover:text-on-surface-variant/55 transition-colors"
+              key={link.label}
+              href={link.href}
+              className="hover:text-[#38bdf8] transition-colors uppercase tracking-wider text-[11px]"
             >
-              Designed by kurlybrains.com
+              {link.label}
             </a>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
-            <Link href="/disclosures" className="hover:text-primary transition-colors">Regulatory</Link>
-          </div>
-        </div>
+          ))}
+        </nav>
+
+        {/* CONTACT & LOCATION SUMMARY */}
+        <p className="text-xs text-slate-400 mb-2 flex flex-wrap items-center justify-center gap-2">
+          <span>Bouddha 6, Kathmandu, Nepal</span>
+          <span className="hidden sm:inline">&middot;</span>
+          <a href="tel:+9779802320122" className="hover:text-white transition-colors">
+            +977 9802320122
+          </a>
+          <span className="hidden sm:inline">&middot;</span>
+          <a href="mailto:info@blueocean.com.np" className="hover:text-white transition-colors">
+            info@blueocean.com.np
+          </a>
+        </p>
+
+        {/* COPYRIGHT */}
+        <p className="text-[10px] text-slate-400">
+          &copy; 2026 Blue Ocean Inco Pvt. Ltd. All rights reserved.
+        </p>
+
       </div>
     </footer>
   );
 }
-
-
