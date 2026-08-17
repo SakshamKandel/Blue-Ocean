@@ -4,10 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  FileText,
   CheckCircle2,
   ChevronRight,
-  ShieldCheck,
   X,
   Send,
 } from "lucide-react";
@@ -63,22 +61,18 @@ export default function InvestmentRequestSection({
               Blue Ocean welcomes investment proposals from businesses and entrepreneurs with clear potential, strong fundamentals, capable leadership, and a compelling long-term vision.
             </p>
 
-            {/* Feature Callout Box */}
-            <div className="flex items-start gap-3.5 p-4 rounded-xl bg-slate-50 border border-slate-200/80 mb-6 w-full">
-              <div className="w-9 h-9 rounded-lg bg-blue-50 text-[#2563eb] flex items-center justify-center shrink-0 mt-0.5 border border-blue-100">
-                <FileText className="w-4 h-4 stroke-[1.75]" />
-              </div>
-              <div>
-                <h3 className="text-xs sm:text-sm font-bold text-[#001035] mb-0.5">
-                  Recommended Proposal Checklist
-                </h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs leading-relaxed">
-                  We review company overviews, revenue models, market sizing, financial performance, capital requirements, and leadership visions.
-                </p>
-              </div>
+            {/* Clean Proposal Checklist (Simple, Clean, No Generic AI Squircle Box) */}
+            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200/80 mb-6 w-full">
+              <h3 className="text-xs sm:text-sm font-extrabold text-[#001035] mb-1.5 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb]" />
+                Recommended Proposal Submission Checklist
+              </h3>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                When submitting an opportunity, please include your <strong>company overview, revenue model, market sizing, historical financials, capital requirement, and management team</strong>.
+              </p>
             </div>
 
-            {/* Primary Action Button (Boxy rounded-lg) */}
+            {/* Primary Action Button */}
             <div className="flex items-center gap-4">
               <button
                 type="button"
@@ -90,36 +84,22 @@ export default function InvestmentRequestSection({
               </button>
             </div>
 
-            {/* Decorative Dot Matrix on bottom right */}
-            <div className="absolute -bottom-6 right-4 select-none pointer-events-none opacity-40 hidden sm:block">
-              <div className="grid grid-cols-6 gap-2">
-                {[...Array(24)].map((_, i) => (
-                  <div key={i} className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                ))}
-              </div>
-            </div>
-
           </div>
 
-          {/* RIGHT COLUMN: SPLIT DUAL-PANEL PHOTO & FLOATING STAT BADGE */}
+          {/* RIGHT COLUMN: SPLIT DUAL-PANEL PHOTO & CLEAN STAT BADGE */}
           <div className="lg:col-span-6 relative">
             
-            {/* FLOATING STAT BADGE (Boxy rounded-lg) */}
-            <div className="absolute -top-4 left-4 sm:left-6 z-20 p-3 sm:p-4 rounded-lg bg-white shadow-md border border-slate-200/90 flex items-center gap-3">
-              <div className="w-9 h-9 rounded-md bg-blue-50 text-[#2563eb] flex items-center justify-center border border-blue-100">
-                <ShieldCheck className="w-5 h-5" />
+            {/* FLOATING STAT BADGE (Clean, Minimal, No Nested Squircle Icon) */}
+            <div className="absolute -top-3 left-4 sm:left-6 z-20 p-3 px-5 rounded-lg bg-white shadow-md border border-slate-200/90 flex flex-col">
+              <div className="text-xl sm:text-2xl font-black text-[#2563eb] leading-none mb-0.5">
+                100%
               </div>
-              <div>
-                <div className="text-xl font-black text-[#001035] leading-none mb-0.5">
-                  100%
-                </div>
-                <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">
-                  CA-Led Underwriting
-                </div>
+              <div className="text-[10px] font-extrabold text-[#001035] uppercase tracking-wider">
+                CA-Led Underwriting
               </div>
             </div>
 
-            {/* DUAL VERTICAL SPLIT PANELS (Boxy rounded-xl) */}
+            {/* DUAL VERTICAL SPLIT PANELS */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               <div className="relative h-72 sm:h-80 rounded-xl overflow-hidden shadow-xs border border-slate-200 group">
                 <Image

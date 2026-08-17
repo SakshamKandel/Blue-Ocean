@@ -7,14 +7,6 @@ import {
   Lightbulb,
   Layers,
   Smile,
-  Briefcase,
-  UserCheck,
-  TrendingUp,
-  Target,
-  Cpu,
-  BarChart4,
-  GitBranch,
-  ShieldCheck,
 } from "lucide-react";
 
 export default function OurApproachSection() {
@@ -46,14 +38,14 @@ export default function OurApproachSection() {
   ];
 
   const criteriaList = [
-    { num: "01", icon: Briefcase, title: "Business Model & Opportunity", desc: "Viability of revenue streams and market size." },
-    { num: "02", icon: UserCheck, title: "Leadership Capability", desc: "Integrity, track record, and execution depth." },
-    { num: "03", icon: TrendingUp, title: "Long-Term Growth", desc: "Scalability and compounding over market cycles." },
-    { num: "04", icon: Target, title: "Competitive Positioning", desc: "Moats, defensibility, and market proposition." },
-    { num: "05", icon: Cpu, title: "Operational Strength", desc: "Process efficiency and human capital." },
-    { num: "06", icon: BarChart4, title: "Financial Sustainability", desc: "Forensic balance sheet health & audit integrity." },
-    { num: "07", icon: GitBranch, title: "Strategic Alignment", desc: "Mutual value creation and shared long-term horizon." },
-    { num: "08", icon: ShieldCheck, title: "Responsible Practices", desc: "Environmental and ethical governance." },
+    { num: "01", title: "Business Model & Opportunity", desc: "Viability of revenue streams, unit economics, and market addressability." },
+    { num: "02", title: "Leadership Capability", desc: "Integrity, operational track record, and management depth." },
+    { num: "03", title: "Long-Term Growth", desc: "Scalability, compounding potential, and market resilience." },
+    { num: "04", title: "Competitive Positioning", desc: "Defensible moats, pricing power, and differentiated proposition." },
+    { num: "05", title: "Operational Strength", desc: "Execution efficiency, human capital, and sound risk management." },
+    { num: "06", title: "Financial Sustainability", desc: "Forensic balance sheet health, verified cash flows, and audit integrity." },
+    { num: "07", title: "Strategic Alignment", desc: "Shared long-term horizon and mutual value creation objectives." },
+    { num: "08", title: "Responsible Governance", desc: "Ethical standards, regulatory compliance, and community impact." },
   ];
 
   return (
@@ -138,35 +130,34 @@ export default function OurApproachSection() {
           ))}
         </div>
 
-        {/* DETAILED 8 EVALUATION CRITERIA MATRIX (Boxy rounded-xl) */}
-        <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200/90 shadow-xs">
+        {/* CLEAN INSTITUTIONAL 8 EVALUATION DIMENSIONS (Simple, Bespoke & Human) */}
+        <div className="pt-8 border-t border-slate-200/80">
           <div className="max-w-3xl mb-6">
-            <h4 className="text-base font-bold text-[#001035] tracking-tight mb-1">
-              Our 8 Investment Evaluation Dimensions
+            <h4 className="text-sm sm:text-base font-extrabold text-[#001035] uppercase tracking-wider mb-1">
+              8 Core Investment Assessment Dimensions
             </h4>
             <p className="text-xs text-slate-500 leading-relaxed">
-              Every opportunity undergoes careful appraisal across fundamental dimensions before strategic capital is committed.
+              Every opportunity undergoes careful appraisal across fundamental dimensions before strategic capital is committed:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-            {criteriaList.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.title}
-                  className="p-3.5 rounded-lg bg-slate-50 border border-slate-100 flex items-start gap-3 hover:bg-blue-50/50 hover:border-blue-200 transition-colors"
-                >
-                  <div className="w-7 h-7 rounded-md bg-blue-100/80 text-[#2563eb] flex items-center justify-center shrink-0 mt-0.5">
-                    <Icon className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-[#001035] leading-snug">{item.title}</h5>
-                    <p className="text-[11px] text-slate-500 mt-0.5 leading-tight">{item.desc}</p>
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {criteriaList.map((item) => (
+              <div
+                key={item.title}
+                className="p-4 rounded-lg bg-white border border-slate-200/80 hover:border-blue-400 transition-colors"
+              >
+                <div className="text-xs font-mono font-bold text-[#2563eb] mb-1">
+                  {item.num}.
                 </div>
-              );
-            })}
+                <h5 className="text-xs font-bold text-[#001035] leading-snug mb-1">
+                  {item.title}
+                </h5>
+                <p className="text-[11px] text-slate-500 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
