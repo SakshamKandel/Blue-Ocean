@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, ArrowUpRight, TrendingUp, Handshake } from "lucide-react";
+import { Briefcase, TrendingUp, Handshake } from "lucide-react";
 
 export default function ApproachCardsSection() {
   return (
@@ -15,7 +15,7 @@ export default function ApproachCardsSection() {
           <span>OUR APPROACH</span>
         </div>
 
-        {/* 3 DISTINCT CARDS (Boxy rounded-xl) */}
+        {/* 3 DISTINCT CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           
           {/* CARD 1: WHITE CARD */}
@@ -27,24 +27,25 @@ export default function ApproachCardsSection() {
             className="p-7 rounded-xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
           >
             <div>
-              <div className="w-12 h-12 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-center mb-5 text-[#001035] group-hover:scale-105 transition-transform">
-                <Briefcase className="w-6 h-6 stroke-[1.5]" />
+              <div className="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center mb-5 text-[#2563eb] group-hover:scale-105 transition-transform">
+                <Briefcase className="w-6 h-6 stroke-[1.75]" />
               </div>
               <h3 className="text-lg font-bold text-[#001035] leading-snug mb-2">
-                Next&ndash;Gen Strategic Investments
+                Next-Gen Strategic Investments
               </h3>
               <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed mb-6">
                 Evaluating companies with disciplined underwriting, verified unit economics, and scalable market moats.
               </p>
             </div>
 
+            {/* Blue Rectangle Button with White Text */}
             <div>
               <a
                 href="#what-we-do"
-                className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 hover:text-[#2563eb] transition-colors group-hover:translate-x-1"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#2563eb] hover:bg-blue-700 text-white text-xs font-bold shadow-xs hover:scale-105 transition-all"
               >
                 <span>Explore More</span>
-                <span className="text-sm font-extrabold">&gt;</span>
+                <span className="text-xs font-black text-white">&gt;</span>
               </a>
             </div>
           </motion.div>
@@ -73,13 +74,14 @@ export default function ApproachCardsSection() {
               </p>
             </div>
 
+            {/* Blue Rectangle Button with White Text */}
             <div className="relative z-10 pt-2">
               <a
                 href="#approach"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#a3e635] hover:bg-[#84cc16] text-[#001035] text-xs font-black shadow-xs hover:scale-105 transition-all"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#001c40] hover:bg-[#002b61] text-white text-xs font-bold shadow-xs hover:scale-105 transition-all"
               >
                 <span>Explore More</span>
-                <span className="text-sm font-extrabold">&gt;</span>
+                <span className="text-xs font-black text-[#38bdf8]">&gt;</span>
               </a>
             </div>
           </motion.div>
@@ -104,13 +106,14 @@ export default function ApproachCardsSection() {
               </p>
             </div>
 
+            {/* Blue Rectangle Button with White Text */}
             <div className="pt-2">
               <a
                 href="#approach"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#000d20] border border-blue-900/60 hover:bg-[#001b3d] text-slate-200 hover:text-white text-xs font-bold shadow-xs hover:scale-105 transition-all"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#2563eb] hover:bg-blue-700 text-white text-xs font-bold shadow-xs hover:scale-105 transition-all"
               >
                 <span>Explore More</span>
-                <span className="text-xs font-bold text-[#38bdf8]">&gt;</span>
+                <span className="text-xs font-black text-white">&gt;</span>
               </a>
             </div>
           </motion.div>

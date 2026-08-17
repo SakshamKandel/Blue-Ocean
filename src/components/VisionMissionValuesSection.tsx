@@ -123,14 +123,14 @@ export default function VisionMissionValuesSection() {
             >
               <div className="flex items-baseline gap-2 mb-1.5">
                 <span className="text-base font-black text-[#2563eb] tracking-tight shrink-0">
-                  {item.num} &mdash;
+                  {item.num}.
                 </span>
                 <h3 className="text-base font-bold text-[#001035] tracking-tight">
                   {item.title}
                 </h3>
               </div>
 
-              <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed pl-8">
+              <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed pl-6">
                 {item.desc}
               </p>
             </motion.div>

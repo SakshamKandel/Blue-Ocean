@@ -7,7 +7,7 @@ import { Star, ShieldCheck, CheckCircle2 } from "lucide-react";
 
 export default function AboutSection() {
   const highlights = [
-    "Disciplined, CA-led underwriting and governance",
+    "Disciplined strategic underwriting and governance",
     "Active partnership with leadership teams",
     "Long-term value creation over short-term cycles",
     "Commitment to ethical & sustainable business practices",
@@ -47,15 +47,15 @@ export default function AboutSection() {
 
             </div>
 
-            {/* Boxy 100% CA Stat Box Overlay */}
-            <div className="absolute -bottom-4 left-4 p-4 rounded-lg bg-[#38bdf8] text-[#001035] shadow-md border border-sky-300 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md bg-[#001035] text-[#38bdf8] flex items-center justify-center font-black">
+            {/* Boxy Stat Box Overlay (White, No Black) */}
+            <div className="absolute -bottom-4 left-4 p-3.5 px-4 rounded-lg bg-white text-[#001035] shadow-md border border-slate-200/90 flex items-center gap-3">
+              <div className="w-9 h-9 rounded-md bg-blue-50 text-[#2563eb] border border-blue-100 flex items-center justify-center font-black">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <span className="block text-base font-black leading-tight">100%</span>
-                <span className="block text-[10px] font-extrabold tracking-wider uppercase leading-tight">
-                  CA-Led Forensic Governance
+                <span className="block text-sm font-black text-[#001035] leading-tight">Institutional</span>
+                <span className="block text-[10px] font-extrabold text-slate-500 tracking-wider uppercase leading-tight">
+                  Governance &amp; Rigor
                 </span>
               </div>
             </div>

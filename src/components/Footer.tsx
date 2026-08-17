@@ -10,7 +10,6 @@ export default function Footer() {
     { label: "What We Do", href: "#what-we-do" },
     { label: "Our Approach", href: "#approach" },
     { label: "Why Choose Us", href: "#values" },
-    { label: "Meet Our Team", href: "#people" },
     { label: "Contact Us", href: "#contact" },
   ];
 
@@ -18,15 +17,18 @@ export default function Footer() {
     <footer className="bg-[#04152d] text-slate-300 py-10 border-t border-blue-950/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 flex flex-col items-center text-center">
         
-        {/* BRAND LOGO (Boxy rounded-lg) */}
-        <Link href="/" className="inline-block p-1.5 px-3 rounded-lg bg-white/95 backdrop-blur-sm shadow-xs mb-4 hover:scale-105 transition-transform">
+        {/* BRAND LOGO & COMPANY NAME (Transparent background with crisp white typography) */}
+        <Link href="/" className="inline-flex flex-col sm:flex-row items-center gap-3 mb-4 group">
           <Image
             src="/Logo.png"
             alt="Blue Ocean Inco Logo"
-            width={160}
-            height={45}
-            className="h-7 sm:h-8 w-auto object-contain"
+            width={180}
+            height={50}
+            className="h-9 sm:h-10 w-auto object-contain brightness-110"
           />
+          <span className="text-lg sm:text-xl font-black text-white tracking-tight uppercase group-hover:text-[#38bdf8] transition-colors">
+            Blue Ocean Inco Pvt. Ltd.
+          </span>
         </Link>
 
         {/* TAGLINE */}

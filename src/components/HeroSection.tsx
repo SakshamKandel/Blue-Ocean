@@ -47,7 +47,7 @@ export default function HeroSection({ onDiscoverClick }: HeroSectionProps) {
               ))}
             </div>
             <span className="text-slate-300 text-[11px] font-medium border-l border-white/20 pl-2">
-              100% CA-Led
+              Institutional Rigor
             </span>
           </motion.div>
 
@@ -58,7 +58,7 @@ export default function HeroSection({ onDiscoverClick }: HeroSectionProps) {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl sm:text-5xl xl:text-[3.5rem] font-black tracking-tight leading-[1.08] uppercase mb-4 text-white font-display"
           >
-            NEXT &mdash; GEN TOP <br />
+            NEXT-GEN TOP <br />
             NOTCH <span className="text-[#38bdf8]">BUSINESS</span> <br />
             SOLUTIONS
           </motion.h1>

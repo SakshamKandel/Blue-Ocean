@@ -29,7 +29,7 @@ export default function OurPeopleSection() {
   ];
 
   const stats = [
-    { number: "100%", label: "CA-Led Governance" },
+    { number: "CA-Led", label: "Governance & Rigor" },
     { number: "100+", label: "Research Coverage" },
     { number: "100%", label: "Capital Alignment" },
   ];

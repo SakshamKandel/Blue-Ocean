@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Phone, MapPin, CheckCircle2 } from "lucide-react";
+import { Phone, MapPin, CheckCircle2, Building2 } from "lucide-react";
 
 export default function ContactSection() {
   const [msgSent, setMsgSent] = useState(false);
@@ -21,7 +21,7 @@ export default function ContactSection() {
         {/* 2-COLUMN CONTACT LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* LEFT COLUMN */}
+          {/* LEFT COLUMN: TITLE, OPENING HOURS, LOCATION & SOCIAL PROOF */}
           <div className="lg:col-span-6 flex flex-col items-start">
             
             {/* Tag */}
@@ -39,7 +39,7 @@ export default function ContactSection() {
             {/* TWO INFO BLOCKS: OPENING HOURS & VISIT LOCATION */}
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 w-full mb-8">
               
-              {/* OPENING HOUR CARD (Boxy rounded-xl) */}
+              {/* OPENING HOUR CARD */}
               <div className="sm:col-span-6 p-5 rounded-xl bg-white border border-sky-200/90 shadow-xs relative overflow-hidden flex flex-col justify-between">
                 <div className="w-8 h-1 bg-[#2563eb] rounded-full mb-2.5" />
                 <h3 className="text-xs sm:text-sm font-extrabold text-[#001035] mb-3">
@@ -120,22 +120,28 @@ export default function ContactSection() {
 
           </div>
 
-          {/* RIGHT COLUMN: "MAKE APPOINTMENT" FORM CARD (Boxy rounded-xl) */}
+          {/* RIGHT COLUMN: "SUBMIT INSTITUTIONAL PROPERTY" FORM CARD */}
           <div className="lg:col-span-6">
             <div className="p-6 sm:p-8 rounded-xl bg-[#f0f9ff] border border-sky-100 shadow-xs">
               
-              <h3 className="text-xl font-black text-[#001035] tracking-tight mb-5">
-                Make Appointment
-              </h3>
+              <div className="flex items-center gap-2 mb-1">
+                <Building2 className="w-5 h-5 text-[#2563eb]" />
+                <h3 className="text-xl font-black text-[#001035] tracking-tight">
+                  Submit Institutional Property
+                </h3>
+              </div>
+              <p className="text-xs text-slate-500 mb-5">
+                Submit property details, commercial real estate, or land development proposals for strategic evaluation.
+              </p>
 
               {msgSent ? (
                 <div className="p-6 rounded-lg bg-white text-center border border-green-200 shadow-xs">
                   <CheckCircle2 className="w-10 h-10 text-green-600 mx-auto mb-2" />
                   <h4 className="text-base font-bold text-slate-900 mb-1">
-                    Appointment Requested
+                    Property Submission Received
                   </h4>
                   <p className="text-xs text-slate-600">
-                    Thank you! Our investment relations team will confirm your consultation slot shortly.
+                    Thank you! Our property underwriting and investment team will review your submission and contact you directly.
                   </p>
                 </div>
               ) : (
@@ -147,7 +153,26 @@ export default function ContactSection() {
                       <input
                         type="text"
                         required
-                        placeholder="Your Name"
+                        placeholder="Property / Project Name"
+                        className="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200/80 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#2563eb]"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Location / City"
+                        className="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200/80 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#2563eb]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Your Name / Organization"
                         className="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200/80 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#2563eb]"
                       />
                     </div>
@@ -155,7 +180,7 @@ export default function ContactSection() {
                       <input
                         type="email"
                         required
-                        placeholder="Your Email"
+                        placeholder="Email Address"
                         className="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200/80 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#2563eb]"
                       />
                     </div>
@@ -165,14 +190,15 @@ export default function ContactSection() {
                     <div>
                       <input
                         type="tel"
-                        placeholder="Phone No"
+                        required
+                        placeholder="Phone / WhatsApp"
                         className="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200/80 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#2563eb]"
                       />
                     </div>
                     <div>
                       <input
                         type="text"
-                        placeholder="Subject"
+                        placeholder="Estimated Value / Area"
                         className="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200/80 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#2563eb]"
                       />
                     </div>
@@ -183,7 +209,7 @@ export default function ContactSection() {
                     <textarea
                       rows={3}
                       required
-                      placeholder="Text here"
+                      placeholder="Property overview, zoning, current occupancy, or development potential..."
                       className="w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200/80 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#2563eb]"
                     />
                   </div>
@@ -195,19 +221,19 @@ export default function ContactSection() {
                       id="terms-check"
                       checked={agreed}
                       onChange={(e) => setAgreed(e.target.checked)}
-                      className="w-4 h-4 rounded text-[#2563eb] focus:ring-[#2563eb] border-slate-300"
+                      className="w-4 h-4 rounded text-[#2563eb] focus:ring-[#2563eb] border-slate-300 cursor-pointer"
                     />
-                    <label htmlFor="terms-check" className="text-xs text-slate-500 select-none">
-                      I agree to the terms &amp; conditions of service.
+                    <label htmlFor="terms-check" className="text-xs text-slate-500 select-none cursor-pointer">
+                      I agree to the terms &amp; conditions of property submission.
                     </label>
                   </div>
 
-                  {/* Submit Button (Boxy CTA) */}
+                  {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full py-3 px-6 rounded-lg bg-[#2563eb] hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-xs hover:shadow-md transition-all"
+                    className="w-full py-3 px-6 rounded-lg bg-[#2563eb] hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs sm:text-sm shadow-xs hover:shadow-md transition-all cursor-pointer"
                   >
-                    Get A Quote
+                    Submit Property Details
                   </button>
 
                 </form>

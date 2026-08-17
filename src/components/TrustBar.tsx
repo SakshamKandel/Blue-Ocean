@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const items = [
-  "100% CA-Led Leadership",
+  "Strategic Leadership",
   "Public & Private Equity",
   "Based in Kathmandu",
   "Forensic Due Diligence"

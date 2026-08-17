@@ -38,16 +38,16 @@ export default function ResponsibleInvestmentSection() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
-            {/* LEFT: MASSIVE BIGGER 100% CA-LED STAT (No box, big clean bold typography) */}
+            {/* LEFT: STRATEGIC RIGOR STAT */}
             <div className="lg:col-span-4 flex flex-col items-center lg:items-start justify-center text-center lg:text-left border-b lg:border-b-0 lg:border-r border-sky-200/80 pb-6 lg:pb-0 lg:pr-8">
-              <div className="text-6xl sm:text-7xl lg:text-8xl font-black text-[#2563eb] tracking-tighter leading-none mb-1">
-                100%
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#2563eb] tracking-tight leading-none mb-1">
+                Strategic
               </div>
-              <div className="text-lg sm:text-xl font-black text-[#001035] uppercase tracking-wider leading-tight">
-                CA-Led <br className="hidden lg:inline" /> Governance
+              <div className="text-base sm:text-lg font-black text-[#001035] uppercase tracking-wider leading-tight">
+                Governance &amp; Rigor
               </div>
               <p className="text-[11px] text-slate-500 font-semibold mt-2">
-                Underwritten by Chartered Accountants under strict fiduciary standards.
+                Underwritten by experienced professionals under strict fiduciary standards.
               </p>
             </div>
 
@@ -58,13 +58,13 @@ export default function ResponsibleInvestmentSection() {
                 {/* STAT 1 */}
                 <div>
                   <div className="text-2xl sm:text-3xl font-black text-[#2563eb] tracking-tight mb-0.5">
-                    100%
+                    Disciplined
                   </div>
                   <h4 className="text-xs font-extrabold text-[#001035] mb-1">
-                    Leadership Depth
+                    Underwriting Rigor
                   </h4>
                   <p className="text-slate-500 text-[11px] leading-relaxed">
-                    Senior underwriting decisions made under strict Chartered Accountant fiduciary standards.
+                    Senior underwriting decisions made under strict institutional fiduciary standards.
                   </p>
                 </div>
 

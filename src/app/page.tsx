@@ -53,14 +53,16 @@ export default function Home() {
         {/* Slide 7: Responsible Investment & Why Blue Ocean */}
         <ResponsibleInvestmentSection />
 
-        {/* Slide 8: Work With Blue Ocean & Investment Request (10-Point Checklist + Modal) */}
+        {/* Slide 8: Investment Request (Direct Deal Flow Intake) */}
         <InvestmentRequestSection
           isModalOpen={isProposalModalOpen}
+          onOpenModal={() => setIsProposalModalOpen(true)}
           onCloseModal={() => setIsProposalModalOpen(false)}
         />
 
-        {/* Slide 9: Our People (Experience, Perspective, and Ambition) */}
+        {/* Slide 9: Our People (Experience, Perspective, and Ambition) 
         <OurPeopleSection />
+        */}
 
         {/* Slide 10: Contact Us, Office Operating Hours & Email Directory */}
         <ContactSection />

@@ -25,7 +25,7 @@ export default function TopBar() {
 
         {/* Right Side: Social Media Icons */}
         <div className="flex items-center gap-4">
-          <span className="text-[#001035]/80">Follow Us &mdash;</span>
+          <span className="text-[#001035]/80">Follow Us:</span>
           <div className="flex items-center gap-3">
             {/* Facebook */}
             <a

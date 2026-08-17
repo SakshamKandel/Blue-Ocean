@@ -44,7 +44,7 @@ export default function Portfolio() {
               </div>
               <div className="px-5 py-3 rounded-full border border-white/20 backdrop-blur-md">
                 <span className="text-white/70 text-sm">Compliance:</span>
-                <span className="text-white font-display font-bold ml-2">100% CA-Led</span>
+                <span className="text-white font-display font-bold ml-2">CA-Led</span>
               </div>
             </motion.div>
           </motion.div>
