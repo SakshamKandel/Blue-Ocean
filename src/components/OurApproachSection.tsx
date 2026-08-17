@@ -90,25 +90,22 @@ export default function OurApproachSection() {
                   </div>
                 )}
 
-                {/* ANIMATED CIRCLE WRAPPER */}
-                <div className="relative z-10 flex items-center justify-center">
+                {/* ANIMATED CONCENTRIC CIRCLE WRAPPER */}
+                <div className="relative z-10 flex items-center justify-center w-24 h-24 sm:w-26 sm:h-26">
                   
-                  {/* Rotating Dashed Orbital Radar Ring on Hover */}
-                  <div className="absolute -inset-2 rounded-full border-2 border-dashed border-blue-500/0 group-hover:border-blue-500/60 group-hover:rotate-180 transition-all duration-700 pointer-events-none" />
+                  {/* Outer Dotted Ring + Halo (Appears smoothly on hover, perfectly centered) */}
+                  <div className="absolute inset-0 rounded-full bg-sky-100/90 border-2 border-dashed border-blue-400/90 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-400 ease-out flex items-center justify-center pointer-events-none group-hover:rotate-90" />
 
-                  {/* Expanding Pulse Ripple Wave on Hover */}
-                  <div className="absolute inset-0 rounded-full bg-blue-400/0 group-hover:bg-blue-400/25 group-hover:scale-125 transition-all duration-500 ease-out pointer-events-none" />
-
-                  {/* Main Circle */}
-                  <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-[#2563eb] group-hover:bg-gradient-to-tr group-hover:from-blue-700 group-hover:to-cyan-400 flex items-center justify-center transition-all duration-300 transform group-hover:-translate-y-1">
+                  {/* Inner Core Blue Gradient Circle (Centrally Locked) */}
+                  <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-[#2563eb] via-[#1d4ed8] to-[#38bdf8] text-white shadow-xs flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                     
                     {/* Icon */}
-                    <div className="transform group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300 ease-out">
+                    <div className="transform group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 ease-out">
                       {step.icon}
                     </div>
 
-                    {/* Step Badge */}
-                    <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-[#001035] group-hover:bg-[#00081a] text-white text-[10px] font-black border-2 border-white flex items-center justify-center transition-transform duration-300 transform group-hover:scale-110 group-hover:rotate-12">
+                    {/* Step Number Badge */}
+                    <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-[#001035] text-white text-[10px] font-black border-2 border-white flex items-center justify-center shadow-xs">
                       {step.num}
                     </div>
                   </div>
