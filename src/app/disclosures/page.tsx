@@ -49,7 +49,7 @@ export default function Disclosures() {
 
             <section>
               <h2 className="font-display text-2xl font-bold text-primary mb-4">Complaint Handling</h2>
-              <p className="leading-relaxed">We have established a formal complaint resolution process. Complaints may be directed to compliance@blueoceaninco.com. We aim to acknowledge all complaints within 2 business days and provide a substantive response within 14 business days.</p>
+              <p className="leading-relaxed">We have established a formal complaint resolution process. Complaints may be directed to Blueocean1169@gmail.com. We aim to acknowledge all complaints within 2 business days and provide a substantive response within 14 business days.</p>
             </section>
           </motion.div>
         </div>

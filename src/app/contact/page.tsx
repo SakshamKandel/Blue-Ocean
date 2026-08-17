@@ -52,7 +52,7 @@ export default function Contact() {
                    </div>
                    <div>
                      <p className="text-sm text-primary-fixed-dim uppercase tracking-wider mb-0.5 font-semibold">Email</p>
-                     <p className="text-lg">info@blueocean.com.np</p>
+                     <p className="text-lg">Blueocean1169@gmail.com</p>
                    </div>
                  </motion.div>
 

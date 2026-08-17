@@ -19,7 +19,7 @@ export default function TopBar() {
 
           <div className="hidden sm:flex items-center gap-1.5 hover:opacity-80 transition-opacity">
             <Mail className="w-3.5 h-3.5 text-[#001035]" />
-            <a href="mailto:info@blueocean.com.np">info@blueocean.com.np</a>
+            <a href="mailto:Blueocean1169@gmail.com">Blueocean1169@gmail.com</a>
           </div>
         </div>
 

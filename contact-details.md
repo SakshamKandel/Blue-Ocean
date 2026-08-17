@@ -13,7 +13,7 @@
 ---
 
 ### Email Addresses
-- **General Inquiries & Support:** `info@blueocean.com.np`
+- **General Inquiries & Support:** `Blueocean1169@gmail.com`
 - **Official / Primary Inbox:** `hello@blueoceaninco.com`
 - **Careers & Talent Acquisition:** `careers@blueoceaninco.com`
 - **Privacy & Data Protection:** `privacy@blueoceaninco.com`

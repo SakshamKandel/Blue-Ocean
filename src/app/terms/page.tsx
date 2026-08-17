@@ -57,7 +57,7 @@ export default function Terms() {
 
             <section>
               <h2 className="font-display text-2xl font-bold text-primary mb-4">7. Contact</h2>
-              <p className="leading-relaxed">For questions about these terms, contact us at <span className="font-bold text-primary">info@blueocean.com.np</span> or write to Blue Ocean Inco Pvt. Ltd., Kathmandu, Nepal.</p>
+              <p className="leading-relaxed">For questions about these terms, contact us at <span className="font-bold text-primary">Blueocean1169@gmail.com</span> or write to Blue Ocean Inco Pvt. Ltd., Kathmandu, Nepal.</p>
             </section>
           </motion.div>
         </div>

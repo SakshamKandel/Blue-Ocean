@@ -47,12 +47,12 @@ export default function Privacy() {
 
             <section>
               <h2 className="font-display text-2xl font-bold text-primary mb-4">5. Your Rights</h2>
-              <p className="leading-relaxed">You have the right to access, correct, or delete your personal data. You may also request a copy of the data we hold about you. To exercise any of these rights, contact us at privacy@blueoceaninco.com.</p>
+              <p className="leading-relaxed">You have the right to access, correct, or delete your personal data. You may also request a copy of the data we hold about you. To exercise any of these rights, contact us at Blueocean1169@gmail.com.</p>
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold text-primary mb-4">6. Contact</h2>
-              <p className="leading-relaxed">For questions regarding this privacy policy, please contact our Data Protection Officer at <span className="font-bold text-primary">info@blueocean.com.np</span> or write to us at Blue Ocean Inco Pvt. Ltd., Kathmandu, Nepal.</p>
+              <h2 className="font-display text-2xl font-bold text-primary mb-4">6. Contact Our DPO</h2>
+              <p className="leading-relaxed">For questions regarding this privacy policy, please contact our Data Protection Officer at <span className="font-bold text-primary">Blueocean1169@gmail.com</span> or write to us at Blue Ocean Inco Pvt. Ltd., Kathmandu, Nepal.</p>
             </section>
           </motion.div>
         </div>

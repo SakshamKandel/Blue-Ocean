@@ -55,7 +55,7 @@ export default function SiteFooter() {
               Contact
             </p>
             <div className="space-y-3">
-              <p>info@blueocean.com.np</p>
+              <p>Blueocean1169@gmail.com</p>
               <p>+977 (1) 2345 678</p>
               <p>Sun-Thu: 10:00 - 17:00</p>
             </div>

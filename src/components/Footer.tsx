@@ -55,8 +55,8 @@ export default function Footer() {
             +977 9802320122
           </a>
           <span className="hidden sm:inline">&middot;</span>
-          <a href="mailto:info@blueocean.com.np" className="hover:text-white transition-colors">
-            info@blueocean.com.np
+          <a href="mailto:Blueocean1169@gmail.com" className="hover:text-white transition-colors">
+            Blueocean1169@gmail.com
           </a>
         </p>
 
