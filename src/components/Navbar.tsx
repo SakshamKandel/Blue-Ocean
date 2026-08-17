@@ -49,12 +49,12 @@ export default function Navbar({ onBookClick, onOpenProposalModal }: NavbarProps
           ))}
         </nav>
 
-        {/* RIGHT CTA BUTTON (Boxy corporate style) */}
+        {/* RIGHT CTA BUTTON */}
         <div className="flex items-center gap-3">
           <a
-            href="#about"
+            href="#contact"
             onClick={onBookClick}
-            className="group inline-flex items-center rounded-lg bg-[#001c40] hover:bg-[#002657] border border-[#38bdf8]/40 p-1 pl-4 shadow-sm transition-all duration-200"
+            className="group inline-flex items-center rounded-lg bg-[#001c40] hover:bg-[#002657] border border-[#38bdf8]/40 p-1 pl-4 shadow-sm transition-all duration-200 cursor-pointer"
           >
             <span className="text-xs font-bold text-white pr-3">
               Book Appointment

@@ -82,9 +82,9 @@ export default function HeroSection({ onDiscoverClick }: HeroSectionProps) {
           >
             {/* Button 1 */}
             <a
-              href="#about"
+              href="#contact"
               onClick={onDiscoverClick}
-              className="group inline-flex items-center rounded-lg bg-[#001c40] hover:bg-[#002657] border border-[#38bdf8]/40 p-1 pl-5 shadow-sm transition-all duration-200"
+              className="group inline-flex items-center rounded-lg bg-[#001c40] hover:bg-[#002657] border border-[#38bdf8]/40 p-1 pl-5 shadow-sm transition-all duration-200 cursor-pointer"
             >
               <span className="text-xs sm:text-sm font-bold text-white pr-4">
                 Book Appointment
